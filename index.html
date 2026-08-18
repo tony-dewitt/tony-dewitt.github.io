@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tony DeWitt — AI Artist &amp; Creative Technologist</title>
+<meta name="description" content="AI-directed visual work by Tony DeWitt (D-WiTT / AUDiO iNSOMNiAC). Hand-drawn concepts and 3D layouts realized through ComfyUI and ControlNet — before/after pairs showing the process.">
+<meta property="og:title" content="Tony DeWitt — AI Artist &amp; Creative Technologist">
+<meta property="og:description" content="Hand-drawn concepts and 3D layouts realized through ComfyUI and ControlNet. Before/after pairs showing the process.">
+<meta property="og:image" content="img/venue-render.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#07080c;
+    --bg-2:#0c0e15;
+    --panel:#11131c;
+    --line:rgba(255,255,255,.09);
+    --line-2:rgba(255,255,255,.16);
+    --ink:#eef1f7;
+    --ink-2:#a8afc0;
+    --ink-3:#767d8f;
+    --teal:#2ee6d0;
+    --violet:#a06bff;
+    --display:"Space Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:var(--teal);text-decoration:none}
+  a:hover{text-decoration:underline}
+  img{display:block;max-width:100%}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:96px 0 72px;
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:-30% -10% auto -10%;
+    height:120%;
+    background:
+      radial-gradient(closest-side at 22% 30%, rgba(160,107,255,.20), transparent 70%),
+      radial-gradient(closest-side at 78% 55%, rgba(46,230,208,.14), transparent 70%);
+    filter:blur(20px);
+    pointer-events:none;
+  }
+  .hero > *{position:relative}
+  .eyebrow{
+    font-family:var(--display);
+    font-size:12px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--teal);
+    margin:0 0 18px;
+  }
+  h1{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(2.6rem,7vw,4.6rem);
+    line-height:1.02;
+    letter-spacing:-.02em;
+    margin:0 0 6px;
+  }
+  h1 .sub{
+    display:block;
+    font-size:clamp(1rem,2.4vw,1.45rem);
+    font-weight:400;
+    letter-spacing:.01em;
+    color:var(--ink-2);
+    margin-top:20px;
+    line-height:1.4;
+  }
+  .lede{
+    max-width:64ch;
+    margin:34px 0 0;
+    font-size:clamp(1.02rem,1.5vw,1.16rem);
+    color:var(--ink-2);
+  }
+  .lede strong{color:var(--ink);font-weight:600}
+  .meta{
+    margin-top:34px;
+    display:flex;flex-wrap:wrap;gap:10px 14px;
+    align-items:center;
+    font-size:14px;color:var(--ink-3);
+  }
+  .chip{
+    border:1px solid var(--line-2);
+    border-radius:999px;
+    padding:6px 14px;
+    font-family:var(--display);
+    font-size:12.5px;
+    letter-spacing:.06em;
+    color:var(--ink-2);
+    background:rgba(255,255,255,.02);
+  }
+
+  /* ---------- SECTION ---------- */
+  section{padding:84px 0}
+  .sec-head{
+    display:flex;align-items:baseline;gap:16px;
+    margin-bottom:14px;
+  }
+  .sec-head h2{
+    font-family:var(--display);
+    font-size:13px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--ink-3);font-weight:500;margin:0;
+  }
+  .rule{flex:1;height:1px;background:var(--line)}
+
+  /* ---------- PIECE ---------- */
+  .piece{padding:56px 0;border-bottom:1px solid var(--line)}
+  .piece:last-of-type{border-bottom:0}
+  .piece-head{margin-bottom:26px;max-width:70ch}
+  .piece-num{
+    font-family:var(--display);
+    font-size:12px;letter-spacing:.2em;
+    color:var(--violet);
+    display:block;margin-bottom:10px;
+  }
+  .piece h3{
+    font-family:var(--display);
+    font-size:clamp(1.5rem,3.4vw,2.1rem);
+    line-height:1.15;letter-spacing:-.015em;
+    margin:0 0 8px;font-weight:700;
+  }
+  .piece .kicker{
+    color:var(--teal);
+    font-size:14px;
+    font-family:var(--display);
+    letter-spacing:.05em;
+    margin:0 0 18px;
+  }
+  .piece p.body{color:var(--ink-2);margin:0 0 14px;max-width:70ch}
+  .piece p.body em{color:var(--ink);font-style:italic}
+  .tools{
+    display:flex;flex-wrap:wrap;gap:8px;
+    margin-top:18px;
+  }
+  .tool{
+    font-family:var(--display);
+    font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-3);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:5px 10px;
+  }
+
+  /* ---------- COMPARE SLIDER ---------- */
+  .compare{
+    position:relative;
+    width:100%;
+    border-radius:10px;
+    overflow:hidden;
+    background:#000;
+    border:1px solid var(--line-2);
+    user-select:none;
+    -webkit-user-select:none;
+    touch-action:pan-y;
+    cursor:ew-resize;
+    box-shadow:0 24px 70px -30px rgba(0,0,0,.9);
+  }
+  .compare img{
+    width:100%;height:100%;
+    object-fit:cover;
+    display:block;
+    pointer-events:none;
+  }
+  .compare .after{position:relative;z-index:1}
+  .compare .before-wrap{
+    position:absolute;inset:0;z-index:2;
+    width:50%;
+    overflow:hidden;
+  }
+  .compare .before-wrap img{
+    width:100%;height:100%;
+    object-fit:cover;
+    /* keep the underlying image the full width of the frame so it doesn't squash */
+  }
+  .compare .before-inner{
+    position:absolute;top:0;left:0;height:100%;
+    /* set via JS to the container width */
+  }
+  .handle{
+    position:absolute;top:0;bottom:0;z-index:3;
+    width:2px;
+    background:linear-gradient(180deg,rgba(46,230,208,.15),var(--teal) 12%,var(--teal) 88%,rgba(46,230,208,.15));
+    left:50%;
+    transform:translateX(-1px);
+    pointer-events:none;
+  }
+  .handle::after{
+    content:"";
+    position:absolute;top:50%;left:50%;
+    width:44px;height:44px;
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+    background:rgba(7,8,12,.72);
+    border:2px solid var(--teal);
+    backdrop-filter:blur(6px);
+    box-shadow:0 0 24px rgba(46,230,208,.45);
+  }
+  .handle::before{
+    content:"";
+    position:absolute;top:50%;left:50%;
+    width:44px;height:44px;
+    transform:translate(-50%,-50%);
+    z-index:1;
+    background:
+      linear-gradient(90deg,transparent 12px,var(--teal) 12px,var(--teal) 13px,transparent 13px),
+      linear-gradient(90deg,transparent 31px,var(--teal) 31px,var(--teal) 32px,transparent 32px);
+    -webkit-mask:linear-gradient(#000,#000);
+    opacity:.9;
+  }
+  .cmp-label{
+    position:absolute;bottom:14px;z-index:4;
+    font-family:var(--display);
+    font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    padding:6px 12px;border-radius:4px;
+    background:rgba(7,8,12,.72);
+    border:1px solid var(--line-2);
+    color:var(--ink-2);
+    backdrop-filter:blur(6px);
+    pointer-events:none;
+  }
+  .cmp-label.l{left:14px}
+  .cmp-label.r{right:14px}
+  .cmp-hint{
+    text-align:center;
+    font-family:var(--display);
+    font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--ink-3);
+    margin-top:12px;
+  }
+  .compare:focus-visible{outline:2px solid var(--violet);outline-offset:3px}
+
+  /* single image */
+  .single{
+    border-radius:10px;overflow:hidden;
+    border:1px solid var(--line-2);
+    box-shadow:0 24px 70px -30px rgba(0,0,0,.9);
+  }
+
+  /* ---------- APPROACH ---------- */
+  .approach{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:28px;
+    margin-top:34px;
+  }
+  .step{
+    border-top:2px solid var(--teal);
+    padding-top:18px;
+  }
+  .step:nth-child(2){border-color:var(--violet)}
+  .step:nth-child(3){border-color:var(--teal)}
+  .step:nth-child(4){border-color:var(--violet)}
+  .step h4{
+    font-family:var(--display);
+    font-size:1.02rem;margin:0 0 8px;letter-spacing:-.01em;
+  }
+  .step p{margin:0;font-size:15px;color:var(--ink-3);line-height:1.6}
+
+  .stack{
+    margin-top:52px;
+    padding:26px 28px;
+    border:1px solid var(--line);
+    border-left:2px solid var(--violet);
+    border-radius:8px;
+    background:rgba(255,255,255,.015);
+    max-width:78ch;
+  }
+  .stack h4{
+    font-family:var(--display);
+    font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--violet);margin:0 0 12px;font-weight:500;
+  }
+  .stack p{margin:0 0 10px;font-size:15.5px;color:var(--ink-2);line-height:1.7}
+  .stack p:last-child{margin-bottom:0}
+  .stack strong{color:var(--ink);font-weight:600}
+  .stack code{
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size:.88em;color:var(--teal);
+    background:rgba(46,230,208,.07);
+    padding:1px 6px;border-radius:3px;
+  }
+
+  /* ---------- PROCESS LOG ---------- */
+  details.log{
+    margin-top:22px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    background:rgba(255,255,255,.015);
+    overflow:hidden;
+  }
+  details.log summary{
+    cursor:pointer;
+    list-style:none;
+    padding:15px 20px;
+    font-family:var(--display);
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--ink-2);
+    display:flex;align-items:center;gap:10px;
+    transition:color .18s ease,background .18s ease;
+  }
+  details.log summary::-webkit-details-marker{display:none}
+  details.log summary:hover{color:var(--teal);background:rgba(46,230,208,.04)}
+  details.log summary::before{
+    content:"+";
+    font-size:16px;line-height:1;
+    color:var(--teal);
+    width:14px;display:inline-block;
+    transition:transform .2s ease;
+  }
+  details.log[open] summary::before{content:"–"}
+  details.log[open] summary{border-bottom:1px solid var(--line);color:var(--teal)}
+  .log-body{padding:22px 20px 24px}
+  .log-spec{
+    display:grid;
+    grid-template-columns:max-content 1fr;
+    gap:6px 18px;
+    font-size:14px;
+    margin-bottom:20px;
+    padding-bottom:18px;
+    border-bottom:1px dashed var(--line);
+  }
+  .log-spec dt{
+    font-family:var(--display);
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-3);padding-top:2px;
+  }
+  .log-spec dd{margin:0;color:var(--ink-2);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px}
+  .log-body h5{
+    font-family:var(--display);
+    font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--violet);
+    margin:20px 0 10px;font-weight:500;
+  }
+  .log-body h5:first-of-type{margin-top:0}
+  .log-body ul{margin:0;padding-left:20px;color:var(--ink-2);font-size:15px;line-height:1.65}
+  .log-body li{margin-bottom:8px}
+  .log-body li::marker{color:var(--ink-3)}
+  .log-body em{color:var(--ink);font-style:italic}
+  @media (max-width:640px){
+    .log-spec{grid-template-columns:1fr;gap:2px}
+    .log-spec dd{margin-bottom:10px}
+    .stack{padding:20px}
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:76px 0 96px}
+  footer h2{
+    font-family:var(--display);
+    font-size:clamp(1.6rem,4vw,2.4rem);
+    margin:0 0 18px;letter-spacing:-.02em;
+  }
+  .contact{
+    display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;
+  }
+  .btn{
+    display:inline-block;
+    font-family:var(--display);
+    font-size:14px;letter-spacing:.04em;
+    padding:12px 22px;
+    border-radius:6px;
+    border:1px solid var(--teal);
+    color:var(--teal);
+    background:rgba(46,230,208,.06);
+    transition:background .18s ease,color .18s ease;
+  }
+  .btn:hover{background:var(--teal);color:#05070a;text-decoration:none}
+  .colophon{
+    margin-top:56px;padding-top:22px;border-top:1px solid var(--line);
+    font-size:13px;color:var(--ink-3);
+  }
+
+  @media (max-width:640px){
+    body{font-size:16px}
+    .wrap{padding:0 20px}
+    .hero{padding:64px 0 52px}
+    section{padding:60px 0}
+    .piece{padding:40px 0}
+    .handle::after{width:36px;height:36px}
+    .cmp-label{font-size:10px;padding:5px 9px;bottom:10px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{transition:none!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">D-WiTT &nbsp;·&nbsp; AUDiO iNSOMNiAC</p>
+    <h1>Tony DeWitt
+      <span class="sub">Visual artist, sound engineer, and creative technologist</span>
+    </h1>
+    <p class="lede">
+      I direct generative AI as a production tool, not a shortcut. My work pairs traditional
+      craft — years of hand-drawn concept art, music production, and 3D design — with AI
+      pipelines (ComfyUI, ControlNet) to realize a vision with intention and control.
+      <strong>Every piece below started as a decision</strong>: a sketch, a composition, a mood.
+      The AI is how I bring it to life, not what replaces the thinking.
+    </p>
+    <div class="meta">
+      <span class="chip">ComfyUI</span>
+      <span class="chip">ControlNet</span>
+      <span class="chip">Z-Image-Turbo</span>
+      <span class="chip">Blender 3D</span>
+      <span class="chip">Unreal Engine 5</span>
+      <span class="chip">Concept Art</span>
+      <span class="chip">Audio Engineering</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ WORK ============ -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head"><h2>Selected Work</h2><span class="rule"></span></div>
+    <p style="color:var(--ink-3);max-width:62ch;margin:0 0 8px;font-size:15px;">
+      Drag the slider on any piece to move between the source and the finished render.
+    </p>
+
+    <!-- 01 -->
+    <article class="piece">
+      <div class="piece-head">
+        <span class="piece-num">01 — Before / After</span>
+        <h3>The AA Meeting</h3>
+        <p class="kicker">Nightclub venue · 2013 hand-drawn concept → AI realization → UE5</p>
+        <p class="body">
+          An original hand-drawn concept for a nightclub venue I designed in 2013. I brought the
+          sketch to life through ControlNet, using edge detection to hold my exact architecture,
+          signage placement, and crowd staging while I directed the neon logo, stage lighting,
+          and atmosphere through targeted prompting.
+        </p>
+        <p class="body">
+          This render is now serving as concept art for rebuilding the environment in Unreal
+          Engine 5 — the full pipeline in one piece: <em>traditional sketch → AI realization →
+          real-time 3D.</em>
+        </p>
+        <div class="tools"><span class="tool">Graphite + Colored Pencil</span><span class="tool">ControlNet Union · Canny</span><span class="tool">Z-Image-Turbo</span><span class="tool">ComfyUI</span></div>
+      </div>
+      <div class="compare" tabindex="0" role="slider" aria-label="The AA Meeting: drag to compare sketch and render" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+        <img class="after" src="img/venue-render.jpg" alt="AI render of The AA Meeting nightclub: a glowing blue neon music-note logo above a stage, violet uplit crowd, and wrought-iron gate in the foreground.">
+        <div class="before-wrap"><div class="before-inner"><img src="img/venue-sketch.jpg" alt="Original 2013 pencil sketch of The AA Meeting venue facade with a hand-drawn neon logo, queue barriers, and crowd."></div></div>
+        <span class="handle" aria-hidden="true"></span>
+        <span class="cmp-label l">Sketch — 2013</span>
+        <span class="cmp-label r">AI Render</span>
+      </div>
+      <p class="cmp-hint">◀ &nbsp;Drag to compare&nbsp; ▶</p>
+
+      <details class="log">
+        <summary>Process log — 2 generations</summary>
+        <div class="log-body">
+          <dl class="log-spec">
+            <dt>Control</dt><dd>ControlNet Union (model patch) · Canny</dd>
+            <dt>Base model</dt><dd>Z-Image-Turbo</dd>
+            <dt>Source</dt><dd>2013 sketchbook concept — phone-digitized, lines cleaned and darkened</dd>
+            <dt>Canny</dt><dd>0.10 / 0.15 &nbsp;→&nbsp; 0.10 / 0.18</dd>
+          </dl>
+
+          <h5>Observations</h5>
+          <ul>
+            <li>Render 1 held the architecture faithfully — venue shape, columns, crowd silhouettes, and the gated foreground all survived the edge map.</li>
+            <li>The signage came back as abstract neon swirls. The edge map carried the <em>shape</em> of the logo, but the prompt never said what the logo <em>was</em> — so the model had nothing to resolve it into.</li>
+          </ul>
+
+          <h5>Adjustments</h5>
+          <ul>
+            <li>Defined the invented element explicitly: <em>"a sixteenth music note with a cursive font displaying THE AA MEETING."</em> The next pass rendered readable text and the note form.</li>
+            <li>Added <em>"narrow beams from stage lights and lasers shine upward"</em> — produced the volumetric shafts that sell the rave atmosphere. Lighting responds to direction as reliably as composition does.</li>
+            <li>Raised the Canny high threshold 0.15 → 0.18. A small bump: tightened linework and cleaned crowd placement without loosening the structure.</li>
+          </ul>
+
+          <h5>Kept / Killed</h5>
+          <ul>
+            <li><strong>Kept Render 2.</strong> Sharper building edges, cleaner crowd shape and placement, improved lighting, more on-brand.</li>
+            <li>Accepted a minor artifact on the far-right crowd — it reads as shadow cast from the stage lights, so it costs the frame nothing.</li>
+            <li>Noted for production: the render placed a light-purple silhouetted box on the far-left column. Good speaker placement — duplicating it to the right column in the UE5 build.</li>
+          </ul>
+        </div>
+      </details>
+    </article>
+
+    <!-- 02 -->
+    <article class="piece">
+      <div class="piece-head">
+        <span class="piece-num">02 — Before / After</span>
+        <h3>Fractured World</h3>
+        <p class="kicker">Hand-painted concept → cinematic key frame</p>
+        <p class="body">
+          A figure stands at the edge of a glowing energy chasm, a beam cutting down through a
+          fractured sci-fi cityscape. Rendered from my own hand-painted concept sketch.
+        </p>
+        <p class="body">
+          This piece taught me where structural control ends and collaboration begins: on loose,
+          painterly source art, the model becomes an <em>interpreter</em> rather than a strict
+          tracer. So the job shifts — from enforcing a layout to curating the strongest vision out
+          of many, and applying artistic judgment to pick the frame that best serves the story.
+        </p>
+        <div class="tools"><span class="tool">Mixed Media Sketch</span><span class="tool">ControlNet Union</span><span class="tool">Z-Image-Turbo</span><span class="tool">Iterative Curation</span></div>
+      </div>
+      <div class="compare" tabindex="0" role="slider" aria-label="Fractured World: drag to compare sketch and render" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+        <img class="after" src="img/fractured-render.jpg" alt="AI render: a helicopter fires cyan energy beams into a burning crater beside a semi truck in a violet-tinted city.">
+        <div class="before-wrap"><div class="before-inner"><img src="img/fractured-sketch.jpg" alt="Hand-drawn mixed-media sketch of a helicopter beaming blue energy into a fractured crater next to a truck, with a lone figure below."></div></div>
+        <span class="handle" aria-hidden="true"></span>
+        <span class="cmp-label l">Concept Sketch</span>
+        <span class="cmp-label r">AI Render</span>
+      </div>
+      <p class="cmp-hint">◀ &nbsp;Drag to compare&nbsp; ▶</p>
+
+      <details class="log">
+        <summary>Process log — 10 generations</summary>
+        <div class="log-body">
+          <dl class="log-spec">
+            <dt>Control</dt><dd>ControlNet Union (model patch) · Canny</dd>
+            <dt>Base model</dt><dd>Z-Image-Turbo</dd>
+            <dt>Source</dt><dd>Hand-painted mixed-media concept sketch</dd>
+            <dt>Canny sweep</dt><dd>0.10 / 0.15 · 0.18 · 0.21 · 0.25 · 0.28 · 0.35</dd>
+          </dl>
+
+          <h5>Observations</h5>
+          <ul>
+            <li>First pass at 0.10 / 0.25 lost too much. The rock formations came through, but the energy beam and the explosion structure dissolved entirely.</li>
+            <li>Tightening to 0.10 / 0.15 locked the intersection and held the helicopter's open side doors with clean lines — but the beam still had no structure, and an artifact floated above the truck.</li>
+            <li><em>The pattern that emerged:</em> on painterly source art, hard-edged objects (vehicle bodies, street geometry) survive edge detection. Soft-edged ones — energy, blast, smoke — have no edges to detect. The beam kept dying no matter how tight I pulled the threshold, because the problem was never the threshold.</li>
+          </ul>
+
+          <h5>Adjustments</h5>
+          <ul>
+            <li>Stopped fighting it with thresholds and rewrote the prompt instead — named the beam's source (<em>"a cannon mounted on the helicopter side door"</em>), named the vehicle (<em>"a white box truck"</em>), gave the debris a physical origin. Structure the edge map can't supply has to come from language.</li>
+            <li>Pulled the armored character out. Its placement was wrong, and it can be composited back in later — removing it stopped the model spending detail on a subject I wasn't going to keep.</li>
+            <li>Swept the high threshold across the full range with the prompt held constant, to find where <em>this</em> source wanted to sit rather than assuming a default.</li>
+            <li>Reframed the helicopter as the subject rather than one element among many, then added <em>"large buildings / massive futuristic towers"</em> to fix the scale relationship against the truck.</li>
+          </ul>
+
+          <h5>Kept / Killed</h5>
+          <ul>
+            <li><strong>Killed 0.18 and 0.21 outright.</strong> The scene objective collapsed — color and lighting held, but the composition stopped meaning anything.</li>
+            <li><strong>Kept the loose end of the sweep.</strong> The cityscape finally built itself and the beam structured properly against the molten ground.</li>
+            <li><em>The counter-intuitive finding, and the one I actually kept:</em> on loose painterly art, <strong>less</strong> structural control produced the better image. Clean architectural line art wants a tight threshold; painterly source wants an open one — because forcing the model to trace ambiguous strokes was what broke the scene in the first place.</li>
+            <li>The remaining corner artifact is a Photoshop or inpaint fix, not a reason to re-roll a frame that works.</li>
+          </ul>
+        </div>
+      </details>
+    </article>
+
+    <!-- 03 -->
+    <article class="piece">
+      <div class="piece-head">
+        <span class="piece-num">03 — Before / After</span>
+        <h3>The Lab — 3D Blockout to Render</h3>
+        <p class="kicker">Blender scene I built → structural input → finished render</p>
+        <p class="body">
+          I modelled, staged, and lit "The Lab" in Blender myself, then fed the viewport frame to
+          ControlNet as the structural input. The warm amber studio behind cold teal glass was an
+          art-direction call made in the 3D scene, before a single generation ran.
+        </p>
+        <p class="body">
+          This was the hardest of the four routes and the most instructive. The 3D scene gave me
+          exact camera and geometry control, but the render fought back — artifacts along the
+          counter line, noise in the shadows, and one hard VRAM crash. <em>What came out of it
+          was a working theory about why, and the fix turned out to live upstream in the scene
+          rather than in any ComfyUI setting.</em>
+        </p>
+        <div class="tools"><span class="tool">Blender 3D</span><span class="tool">ControlNet Union · Canny</span><span class="tool">Z-Image-Turbo</span><span class="tool">Art Direction</span></div>
+      </div>
+      <div class="compare" tabindex="0" role="slider" aria-label="The Lab 3D blockout: drag to compare Blender viewport and render" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+        <img class="after" src="img/blender-render.jpg" alt="AI render of a warm-lit music studio with monitors and speakers seen through a teal-glowing glass partition.">
+        <div class="before-wrap"><div class="before-inner"><img src="img/blender-viewport.jpg" alt="Blender 3D viewport showing the untextured grey-and-blue blockout of the studio and lab set."></div></div>
+        <span class="handle" aria-hidden="true"></span>
+        <span class="cmp-label l">Blender Viewport</span>
+        <span class="cmp-label r">AI Render</span>
+      </div>
+      <p class="cmp-hint">◀ &nbsp;Drag to compare&nbsp; ▶</p>
+
+      <details class="log">
+        <summary>Process log — 7 generations on the 3D reference</summary>
+        <div class="log-body">
+          <dl class="log-spec">
+            <dt>Control</dt><dd>ControlNet Union (model patch) · Canny</dd>
+            <dt>Source</dt><dd>Blender viewport frame — scene modelled, staged and lit by me</dd>
+            <dt>Canny</dt><dd>0.10 / 0.34 default · swept 0.22 · 0.20 · 0.15</dd>
+            <dt>Resolution</dt><dd>1024 → 768 (forced by VRAM)</dd>
+          </dl>
+
+          <h5>Observations</h5>
+          <ul>
+            <li>Swapping the reference from a prior render to the Blender frame changed the architecture immediately — the observation window grew to full height, and the front lab counter rendered on the <em>wrong side of the glass</em>, inside the studio.</li>
+            <li><strong>Materials were the win.</strong> Studio wall treatment, acoustic panels, and the amber accent lighting behind the panels all resolved convincingly. Glass quality improved with real reflections.</li>
+            <li><strong>Structure was the cost.</strong> Repeated artifacts at the counter line, a floating bonsai, a chair rendered in two layers, a microphone that resolved into a chandelier, gibberish text on the console screens.</li>
+            <li>Re-angling the Blender camera made it worse, not better: the laboratory held its structure, the observation room didn't.</li>
+          </ul>
+
+          <h5>Adjustments</h5>
+          <ul>
+            <li>Swept the high threshold down from the 0.34 default through 0.22, 0.20, and 0.15 looking for cleaner detection. Tightening never rescued it — at 0.15 the image softened, clean lines were lost, and noise increased.</li>
+            <li>Hit the 8 GB VRAM ceiling on the seventh generation — KSampler failed mid-execution. Restarted ComfyUI, closed Blender and everything else, dropped resolution 1024 → 768. The render completed.</li>
+            <li>Logged the cost of that fix rather than hiding it: 768 is visibly softer than 1024, and most of the added digital noise sat in the dark areas of the frame.</li>
+          </ul>
+
+          <h5>Kept / Killed</h5>
+          <ul>
+            <li>Kept the frame where the studio materials and the two-zone lighting held together.</li>
+            <li><strong>The working theory I took out of it:</strong> my Blender scene lighting is too bright for clean edge detection. Blown highlights give Canny nothing to trace — which is why structure kept dissolving no matter which threshold I tried.</li>
+            <li><em>That's the difference that matters. The next pass is a lighting change in the 3D scene I authored, not a parameter change in ComfyUI.</em></li>
+          </ul>
+        </div>
+      </details>
+    </article>
+
+    <!-- 04 -->
+    <article class="piece">
+      <div class="piece-head">
+        <span class="piece-num">04 — Before / After</span>
+        <h3>The Lab — Sketch to Render</h3>
+        <p class="kicker">Hand-drawn line layout → fully realized environment</p>
+        <p class="body">
+          The payoff pass. My studio reimagined as an observation chamber — the artist as the
+          specimen behind the glass. I drew the layout by hand as bare lines: a window frame, a
+          raised platform, two angled counters. Everything else came from language.
+        </p>
+        <p class="body">
+          The emergency button under its glass lift cover, the hot-pink beaker beside a laptop,
+          the cyan strip lighting along both counter frames, the mic stand placed relative to the
+          right-side monitors — none of that is in the drawing. <em>Line art turned out to be the
+          cleanest source I fed the model all week: no shading noise, no blown highlights, so the
+          edge map held exactly what I drew and nothing else.</em>
+        </p>
+        <div class="tools"><span class="tool">Ink Line Art</span><span class="tool">ControlNet Union · Canny</span><span class="tool">Z-Image-Turbo</span><span class="tool">Prompt Direction</span></div>
+      </div>
+      <div class="compare" tabindex="0" role="slider" aria-label="The Lab sketch to render: drag to compare line drawing and render" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+        <img class="after" src="img/lab-render.jpg" alt="AI render of a dark observation room with teal-lit lab benches and a window looking into a violet-lit music studio.">
+        <div class="before-wrap"><div class="before-inner"><img src="img/lab-sketch.jpg" alt="Minimal black-and-white line drawing of the observation room layout: a window frame, a central riser, and two angled counters."></div></div>
+        <span class="handle" aria-hidden="true"></span>
+        <span class="cmp-label l">Line Drawing</span>
+        <span class="cmp-label r">AI Render</span>
+      </div>
+      <p class="cmp-hint">◀ &nbsp;Drag to compare&nbsp; ▶</p>
+
+      <details class="log">
+        <summary>Process log — 3 generations</summary>
+        <div class="log-body">
+          <dl class="log-spec">
+            <dt>Control</dt><dd>ControlNet Union (model patch) · Canny</dd>
+            <dt>Source</dt><dd>Hand-drawn line layout</dd>
+            <dt>Canny</dt><dd>0.10 / 0.34 — default, no adjustment needed</dd>
+            <dt>Resolution</dt><dd>768</dd>
+          </dl>
+
+          <h5>Observations</h5>
+          <ul>
+            <li>Held at the <em>default</em> threshold on the first pass — no tuning required. After fighting the 3D reference, that was the whole point: clean line art carries no shading noise and no blown highlights, so the edge map contains my composition and nothing else.</li>
+            <li>Everything decorative came from language rather than the drawing — the emergency button and its glass lift cover, the beaker, the test tubes and microscope, the cyan strip lighting, the amber accent behind the acoustic panels.</li>
+          </ul>
+
+          <h5>Adjustments</h5>
+          <ul>
+            <li>Asked for <em>"two pairs of studio monitors"</em> on the second pass and got <strong>eight speakers</strong>. The model already reads one pair as four — two per side. A quantifier that's obvious to me was ambiguous to it.</li>
+            <li>That same pass lost the mixing console and the room depth, and dropped an artifact in front of the raised platform. One imprecise phrase cost the entire frame.</li>
+            <li>Reverted to the original prompt and re-ran at default to re-test line detection before touching the threshold — isolating one variable instead of changing two things at once.</li>
+          </ul>
+
+          <h5>Kept / Killed</h5>
+          <ul>
+            <li><strong>Kept the first pass.</strong> The cleanest structural adherence of anything on this page, and it needed the least intervention.</li>
+            <li>The rule I took from it: <em>count in explicit numbers, never in groupings.</em> "Four studio monitors, two per side" leaves nothing to interpret.</li>
+          </ul>
+        </div>
+      </details>
+    </article>
+
+    <!-- 05 -->
+    <article class="piece">
+      <div class="piece-head">
+        <span class="piece-num">05 — Control Case</span>
+        <h3>The Lab — Text Only</h3>
+        <p class="kicker">No structural input · prompt engineering alone</p>
+        <p class="body">
+          The same concept driven purely by language — no sketch, no 3D, no edge map. I include it
+          on purpose: it's the control case for everything above it.
+        </p>
+        <p class="body">
+          Prompting alone gets you a good-looking room. It does not get you <em>your</em> room.
+          Comparing this against the sketch- and Blender-driven pieces is exactly how I mapped
+          where prompt control runs out and structural control has to take over — and that
+          boundary is the thing I actually build workflows around.
+        </p>
+        <div class="tools"><span class="tool">Text-to-Image</span><span class="tool">Z-Image-Turbo</span><span class="tool">Prompt Engineering</span><span class="tool">Comparative Testing</span></div>
+      </div>
+      <div class="single">
+        <img src="img/lab-concept.jpg" alt="AI render from a text prompt only: a teal-lit futuristic laboratory with a glass wall and a holographic audio waveform.">
+      </div>
+
+      <details class="log">
+        <summary>Process log — the control case</summary>
+        <div class="log-body">
+          <dl class="log-spec">
+            <dt>Control</dt><dd>None — prompt only</dd>
+            <dt>Model stack</dt><dd>Z-Image-Turbo · Qwen-3-4B text encoder · ae VAE</dd>
+            <dt>Settings</dt><dd>15 steps · 1344 × 768</dd>
+            <dt>Method</dt><dd>Seed held fixed, prompt varied</dd>
+          </dl>
+
+          <h5>Observations</h5>
+          <ul>
+            <li>On-brand in a single generation — palette, mood, and lighting landed immediately from brand tokens alone. The model added a glowing waveform behind the glass <em>unprompted</em>, an emergent match to the audio-visual identity.</li>
+            <li>Second pass: seed held fixed, prompt expanded to put a recording studio behind the glass. The two-zone color-temperature concept landed — warm studio through the window, cool observation room in front.</li>
+            <li>But the foreground drifted from "lab" toward "studio," and placement didn't match intent: mic at the console instead of in the booth, no lab counters at all.</li>
+          </ul>
+
+          <h5>Finding</h5>
+          <ul>
+            <li><strong>A fixed seed does not freeze the image when the prompt changes.</strong> The seed sets the initial noise; the prompt shapes how that noise resolves. Same seed + changed prompt = related, not identical. The seed is a controlled-experiment variable, not a freeze button.</li>
+            <li>The same limit surfaced three ways across sessions: subject identity wouldn't hold across camera angles, objects wouldn't hold position, and output wouldn't hold stable across prompt edits.</li>
+          </ul>
+
+          <h5>Kept / Killed</h5>
+          <ul>
+            <li><strong>Kept as the control case.</strong> Prompt and seed give <em>influence, not control</em> — they paint mood and content in broad strokes and cannot do surgical, spatial, or identity-locked edits.</li>
+            <li>Written in the log at the time: <em>"I now know where prompt-and-seed control ends and where conditioning tools become necessary, because I have now mapped this boundary myself."</em></li>
+            <li>Not from a tutorial — by hitting it. It's the reason every other piece on this page starts with a drawing or a 3D scene instead of a sentence.</li>
+          </ul>
+        </div>
+      </details>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ APPROACH ============ -->
+<section class="approach">
+  <div class="wrap">
+    <div class="sec-head"><h2>How I Work</h2><span class="rule"></span></div>
+    <p class="lede" style="margin-top:6px">
+      I treat generative AI as a production system, not a slot machine. The same four steps
+      run underneath every piece on this page.
+    </p>
+    <div class="steps">
+      <div class="step">
+        <h4>1 · Compose first</h4>
+        <p>The decision happens before the model does — a sketch, a 3D blockout, a staged camera. If I can't draw it, I don't prompt it.</p>
+      </div>
+      <div class="step">
+        <h4>2 · Enforce structure</h4>
+        <p>ControlNet holds my layout so the output is bound to my composition instead of the model's average of a million others.</p>
+      </div>
+      <div class="step">
+        <h4>3 · Direct the world</h4>
+        <p>Lighting, materials, mood and story are shaped through iterative prompt engineering — each generation evaluated against the intended result.</p>
+      </div>
+      <div class="step">
+        <h4>4 · Judge and refine</h4>
+        <p>An audio engineer's ear for "not quite right yet." I curate hard, keep what serves the story, and write the workflow down so it repeats.</p>
+      </div>
+    </div>
+
+    <div class="stack" style="border-left-color:var(--teal)">
+      <h4 style="color:var(--teal)">The dial</h4>
+      <p>
+        <strong>The Canny high threshold decides how much of the source gets traced.</strong>
+        Lower detects more edges, higher detects fewer. That's the dial everyone reaches for
+        first. Across four sources it turned out to be the less important variable.
+      </p>
+      <p>
+        Clean line art holds at the default, because every edge in it is one I drew on purpose.
+        Painterly art breaks when I tighten it, because tightening forces the model to trace
+        ambiguous strokes. A brightly lit 3D render loses structure at <em>every</em> setting,
+        because blown highlights give the edge detector nothing to find.
+      </p>
+      <p>
+        <strong>Tune the source first, then the dial.</strong> That's the rule I'd bring to any
+        pipeline I build.
+      </p>
+    </div>
+
+    <div class="stack">
+      <h4>The stack</h4>
+      <p>
+        Everything on this page was generated <strong>locally</strong> — ComfyUI Desktop running
+        Z-Image-Turbo with a Qwen-3-4B text encoder, structural control via the
+        Z-Image-Turbo-Fun ControlNet Union model patch, Canny preprocessing through
+        <code>comfyui_controlnet_aux</code>. 3D authored in Blender. Concept art by hand.
+      </p>
+      <p>
+        On an RTX 2070 Super with an <strong>8&nbsp;GB VRAM ceiling</strong>, at 768&nbsp;px.
+        The constraint is the point: working inside it is what forced the pipeline to be
+        deliberate instead of brute-forced.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <h2>Let's build something intentional.</h2>
+    <p class="lede" style="margin-top:0">
+      Open to AI artist, concept art, and creative technologist work. Reach out any time.
+    </p>
+    <div class="contact">
+      <a class="btn" href="mailto:theaudioinsomniac@gmail.com">theaudioinsomniac@gmail.com</a>
+    </div>
+    <p class="colophon">
+      Tony DeWitt · D-WiTT · AUDiO iNSOMNiAC — Elk Grove, CA<br>
+      All artwork, sketches, 3D scenes, and AI direction by Tony DeWitt.
+    </p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var comparers = document.querySelectorAll('.compare');
+
+  comparers.forEach(function(box){
+    var afterImg  = box.querySelector('.after');
+    var innerWrap = box.querySelector('.before-wrap');
+    var inner     = box.querySelector('.before-inner');
+    var beforeImg = inner.querySelector('img');
+    var handle    = box.querySelector('.handle');
+    var pos = 50; // percent
+
+    function sizeInner(){
+      // The clipped "before" layer must keep the full frame width so it never squashes.
+      var w = box.clientWidth;
+      inner.style.width = w + 'px';
+      beforeImg.style.width = w + 'px';
+      beforeImg.style.height = box.clientHeight + 'px';
+    }
+
+    function setPos(p){
+      pos = Math.max(0, Math.min(100, p));
+      innerWrap.style.width = pos + '%';
+      handle.style.left = pos + '%';
+      box.setAttribute('aria-valuenow', Math.round(pos));
+    }
+
+    function fromEvent(e){
+      var rect = box.getBoundingClientRect();
+      var x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+      setPos((x / rect.width) * 100);
+    }
+
+    var dragging = false;
+    function down(e){ dragging = true; fromEvent(e); }
+    function move(e){
+      if(!dragging) return;
+      if(e.cancelable && e.touches) e.preventDefault();
+      fromEvent(e);
+    }
+    function up(){ dragging = false; }
+
+    box.addEventListener('mousedown', down);
+    window.addEventListener('mousemove', move);
+    window.addEventListener('mouseup', up);
+    box.addEventListener('touchstart', down, {passive:true});
+    window.addEventListener('touchmove', move, {passive:false});
+    window.addEventListener('touchend', up);
+
+    // hover scrub on desktop for a bit of delight, only when not dragging
+    box.addEventListener('mousemove', function(e){
+      if(dragging) return;
+      if(window.matchMedia('(hover:hover) and (pointer:fine)').matches) fromEvent(e);
+    });
+
+    // keyboard
+    box.addEventListener('keydown', function(e){
+      var step = e.shiftKey ? 10 : 2;
+      if(e.key === 'ArrowLeft'){ setPos(pos - step); e.preventDefault(); }
+      if(e.key === 'ArrowRight'){ setPos(pos + step); e.preventDefault(); }
+      if(e.key === 'Home'){ setPos(0); e.preventDefault(); }
+      if(e.key === 'End'){ setPos(100); e.preventDefault(); }
+    });
+
+    function init(){
+      // lock the frame to the render's aspect ratio so both layers align
+      if(afterImg.naturalWidth){
+        box.style.aspectRatio = afterImg.naturalWidth + ' / ' + afterImg.naturalHeight;
+      }
+      sizeInner();
+      setPos(pos);
+    }
+
+    if(afterImg.complete) init(); else afterImg.addEventListener('load', init);
+    if(beforeImg.complete) sizeInner(); else beforeImg.addEventListener('load', sizeInner);
+    window.addEventListener('resize', function(){ sizeInner(); setPos(pos); });
+  });
+})();
+</script>
+</body>
+</html>
