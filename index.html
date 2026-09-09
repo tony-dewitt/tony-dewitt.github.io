@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tony DeWitt — Creative Technologist · Sound, Design, Motion &amp; Ai</title>
+<title>Tony DeWitt — Creative Technologist · Design, Motion, Ai &amp; Sound</title>
 <meta name="description" content="Tony DeWitt (D-WiTT / AUDiO iNSOMNiAC) — creative technologist working across audio, design, motion and AI. Nineteen years of production, sixteen years building ProjectMAG. Elk Grove, CA.">
-<meta property="og:title" content="Tony DeWitt — Sound, design, motion &amp; Ai. One studio.">
-<meta property="og:description" content="Nineteen years across audio, design, motion and 3D. Two released records engineered end to end, 30 design pieces for 16 clients, and a sixteen-year world called ProjectMAG.">
+<meta property="og:title" content="Tony DeWitt — Design, motion, Ai &amp; sound. One studio.">
+<meta property="og:description" content="Nineteen years across design, motion, 3D and audio. Two released records engineered end to end, 30 design pieces for 16 clients, and a sixteen-year world called ProjectMAG.">
 <meta property="og:image" content="img/venue-render.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -15,10 +15,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#ffffff; --bg2:#f7f8fa; --line:rgba(0,0,0,.10); --line2:rgba(0,0,0,.17);
+  --bg:#f2f3f6; --bg2:#e9ebf0; --line:rgba(0,0,0,.10); --line2:rgba(0,0,0,.17);
   --ink:#14161c; --ink2:#555c6a; --ink3:#868e9c;
   --teal:#0f9b8e; --violet:#6d28d9; --amber:#b45309; --pink:#c92a72;
-  --card:#fdfdfe; --shadow:0 18px 42px -24px rgba(16,20,30,.28);
+  --card:#ffffff; --shadow:0 18px 42px -24px rgba(16,20,30,.28);
   --display:"Space Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   --body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
   --skew:-9deg;
@@ -32,7 +32,7 @@ a{color:var(--teal);text-decoration:none}
 a:hover{text-decoration:underline}
 .wrap{max-width:1240px;margin:0 auto;padding:0 28px}
 
-nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav{position:sticky;top:0;z-index:60;background:rgba(242,243,246,.90);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 nav .row{max-width:1240px;margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .brand{font-family:var(--display);font-weight:700;letter-spacing:.16em;font-size:15px}
 .brand span{color:var(--teal);font-weight:400;letter-spacing:.1em;font-size:11px;display:block;margin-top:2px}
@@ -64,7 +64,7 @@ h1{font-family:var(--display);font-weight:700;font-size:clamp(2.4rem,6.5vw,4.4re
   .foot-mark{justify-self:start;max-width:190px}}
 
 .reel{position:relative;margin-top:40px;aspect-ratio:16/9;border:1px dashed var(--line2);border-radius:12px;
-  background:linear-gradient(150deg,#fafbfc,#eef1f5);display:grid;place-items:center;overflow:hidden}
+  background:linear-gradient(150deg,#fbfcfd,#e4e7ee);display:grid;place-items:center;overflow:hidden}
 .reel .play{width:76px;height:76px;border-radius:50%;border:2px solid var(--teal);display:grid;place-items:center;background:rgba(15,155,142,.06)}
 .reel .play::after{content:"";border-left:20px solid var(--teal);border-top:13px solid transparent;border-bottom:13px solid transparent;margin-left:6px}
 .reel .cap{position:absolute;bottom:18px;left:20px;font-family:var(--display);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3)}
@@ -74,9 +74,9 @@ h1{font-family:var(--display);font-weight:700;font-size:clamp(2.4rem,6.5vw,4.4re
 .sec-head h2{font-family:var(--display);font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink3);font-weight:500;margin:0}
 .rule{flex:1;height:1px;background:var(--line)}
 .pillars{position:relative;height:74vh;min-height:540px;display:flex;overflow:hidden;
-  transform:skewX(var(--skew));width:116%;margin-left:-8%;background:#fff}
+  transform:skewX(var(--skew));width:116%;margin-left:-8%;background:var(--bg)}
 .pillar{position:relative;flex:1 1 0;min-width:0;overflow:hidden;cursor:pointer;
-  border-left:4px solid #fff;transition:flex-grow .6s cubic-bezier(.22,1,.36,1)}
+  border-left:4px solid var(--bg);transition:flex-grow .6s cubic-bezier(.22,1,.36,1)}
 .pillar:first-child{border-left:0}
 .pillar::before{content:"";position:absolute;left:0;top:0;bottom:0;width:1px;background:rgba(0,0,0,.10);z-index:4;pointer-events:none}
 .pillar:first-child::before{display:none}
@@ -89,8 +89,8 @@ h1{font-family:var(--display);font-weight:700;font-size:clamp(2.4rem,6.5vw,4.4re
 .slide.on{opacity:1;transform:scale(1)}
 video.slide{object-fit:cover;width:100%;height:100%}
 .pillar .veil{position:absolute;inset:0;transition:background .5s ease;
-  background:linear-gradient(180deg,rgba(255,255,255,.05) 0%,rgba(255,255,255,.28) 42%,rgba(255,255,255,.93) 70%,#fff 86%)}
-.pillar:hover .veil{background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.10) 48%,rgba(255,255,255,.90) 76%,#fff 92%)}
+  background:linear-gradient(180deg,rgba(242,243,246,.05) 0%,rgba(242,243,246,.30) 40%,rgba(242,243,246,.94) 68%,var(--bg) 84%)}
+.pillar:hover .veil{background:linear-gradient(180deg,rgba(242,243,246,0) 0%,rgba(242,243,246,.10) 48%,rgba(242,243,246,.90) 76%,var(--bg) 92%)}
 .pillar .accent{position:absolute;left:0;right:0;bottom:0;height:3px;transform:scaleX(0);transform-origin:left;transition:transform .5s ease}
 .pillar:hover .accent{transform:scaleX(1)}
 .pillar .body{position:absolute;left:0;right:0;bottom:0;padding:36px 64px 34px 46px;z-index:3}
@@ -108,16 +108,22 @@ video.slide{object-fit:cover;width:100%;height:100%}
 .dots i.on{background:var(--ink)}
 @media(max-width:820px){
   .pillars{transform:none;width:100%;margin:0;height:auto;flex-direction:column;min-height:0}
-  .pillar{flex:none!important;height:300px;border-left:0;border-top:4px solid #fff}
+  .pillar{flex:none!important;height:430px;border-left:0;border-top:4px solid var(--bg)}
   .pillar:first-child{border-top:0}
   .pillar::before{display:none}
   .pillar__inner,.pillar__ui{transform:none;width:100%;left:0}
-  .pillar .body,.pillar:first-child .body{padding:0 26px 26px}
-  .dots,.pillar:first-child .dots{left:26px}
-  .pillar .blurb{max-height:200px;opacity:1;margin-top:12px}
+  /* image gets the top half; text sits on solid ground below it */
+  .pillar .veil,.pillar:hover .veil{background:linear-gradient(180deg,
+      rgba(242,243,246,0) 0%, rgba(242,243,246,.06) 26%, rgba(242,243,246,.62) 42%,
+      rgba(242,243,246,.96) 52%, var(--bg) 58%)}
+  .pillar .body,.pillar:first-child .body{padding:0 24px 24px;top:auto}
+  .dots,.pillar:first-child .dots{left:24px;top:18px}
+  .pillar .blurb{max-height:220px;opacity:1;margin-top:10px}
   .pillar .go{opacity:1;transform:none}
   .pillar .accent{transform:scaleX(1)}
 }
+@media(max-width:420px){ .pillar{height:460px} }
+@media(max-width:560px){ .fab{right:12px;bottom:12px;padding:10px 14px;font-size:11px} }
 
 section.stub{padding:78px 0;border-top:1px solid var(--line)}
 .feature{padding:78px 0;border-top:1px solid var(--line);background:var(--bg2)}
@@ -144,6 +150,34 @@ section.stub{padding:78px 0;border-top:1px solid var(--line)}
 @media(max-width:800px){.steps3{grid-template-columns:1fr;gap:26px}}
 .stub h3{font-family:var(--display);font-size:clamp(1.7rem,3.6vw,2.4rem);margin:0 0 8px;letter-spacing:-.02em}
 .stub .kick{font-family:var(--display);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;margin:0 0 6px}
+/* ---------- PROCESS LOGS ---------- */
+.logs{display:grid;gap:10px}
+details.log{border:1px solid var(--line);border-radius:10px;background:var(--card);overflow:hidden}
+details.log summary{list-style:none;cursor:pointer;padding:15px 18px 15px 44px;position:relative;
+  font-family:var(--display);font-size:14px;color:var(--ink);transition:background .25s,color .25s}
+details.log summary::-webkit-details-marker{display:none}
+details.log summary b{font-weight:600}
+details.log summary span{color:var(--ink3);font-weight:400;margin-left:10px;font-size:12px;
+  letter-spacing:.12em;text-transform:uppercase}
+details.log summary:hover{color:var(--pink);background:rgba(201,42,114,.04)}
+details.log summary::before{content:"+";position:absolute;left:18px;top:50%;transform:translateY(-50%);
+  font-size:16px;color:var(--pink);line-height:1}
+details.log[open] summary::before{content:"–"}
+details.log[open] summary{border-bottom:1px solid var(--line);color:var(--pink)}
+.log-body{padding:20px 20px 22px}
+.log-spec{display:grid;grid-template-columns:max-content 1fr;gap:6px 18px;margin:0 0 18px;
+  padding-bottom:16px;border-bottom:1px solid var(--line)}
+.log-spec dt{font-family:var(--display);font-size:10px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--ink3);padding-top:3px}
+.log-spec dd{margin:0;color:var(--ink2);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.8px}
+.log-body h5{font-family:var(--display);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink3);margin:18px 0 8px;font-weight:500}
+.log-body h5:first-of-type{margin-top:0}
+.log-body ul{margin:0;padding-left:20px;color:var(--ink2);font-size:14.8px;line-height:1.65}
+.log-body li{margin-bottom:8px}
+.log-body em{color:var(--ink);font-style:italic}
+@media(max-width:640px){.log-spec{grid-template-columns:1fr;gap:2px}.log-spec dd{margin-bottom:10px}}
+section.stub.cont{padding-top:26px}
 .count-line{font-family:var(--display);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin:0 0 26px}
 
 .entry{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card);box-shadow:var(--shadow);margin-bottom:22px}
@@ -197,7 +231,7 @@ section.stub{padding:78px 0;border-top:1px solid var(--line)}
 .gal img{width:100%;aspect-ratio:1;object-fit:cover;display:block;background:#fff}
 .gal figcaption{padding:11px 13px;font-size:12.6px;color:var(--ink2);line-height:1.45}
 .gal figcaption b{display:block;font-family:var(--display);font-size:12px;color:var(--ink);margin-bottom:2px}
-.gal.logos img{object-fit:contain;padding:16px;background:var(--bg2)}
+.gal.logos img{object-fit:contain;padding:16px;background:#fff}
 .gal figure.onDark img{background:#14161c}
 .gal figure.intl figcaption b::after{content:"INTL";float:right;font-size:9px;letter-spacing:.14em;color:var(--teal);border:1px solid var(--teal);border-radius:3px;padding:1px 5px;position:relative;top:1px;font-weight:500}
 .subhead{font-family:var(--display);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3);margin:40px 0 16px}
@@ -221,15 +255,15 @@ body.notes-on .anno{opacity:1;pointer-events:auto}
 .anno.open .card-note{display:block}
 .anno .card-note b{color:var(--amber);font-family:var(--display);font-size:11px;letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:6px}
 .anno.right .card-note{left:auto;right:0}
-.fab{position:fixed;right:22px;bottom:22px;z-index:70;font-family:var(--display);font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:13px 20px;border-radius:999px;border:1px solid var(--amber);color:var(--amber);background:rgba(255,255,255,.94);backdrop-filter:blur(10px);cursor:pointer}
+.fab{position:fixed;right:22px;bottom:22px;z-index:70;font-family:var(--display);font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:13px 20px;border-radius:999px;border:1px solid var(--amber);color:var(--amber);background:rgba(255,255,255,.96);backdrop-filter:blur(10px);cursor:pointer}
 body.notes-on .fab{background:var(--amber);color:#fff}
 
 
 /* ---------- DIGITAL RIFT — greyscale grid pulse, 15s cycle ---------- */
 .rift{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0;
   background-image:
-    repeating-linear-gradient(0deg, rgba(20,22,28,.55) 0 1px, transparent 1px 46px),
-    repeating-linear-gradient(90deg, rgba(20,22,28,.55) 0 1px, transparent 1px 46px);
+    repeating-linear-gradient(0deg, rgba(20,22,28,.50) 0 1px, transparent 1px 46px),
+    repeating-linear-gradient(90deg, rgba(20,22,28,.50) 0 1px, transparent 1px 46px);
   background-size:46px 46px;
   -webkit-mask-image:linear-gradient(107deg,
       transparent 0%, transparent 34%,
@@ -287,8 +321,8 @@ footer strong{color:var(--ink)}
 <nav><div class="row">
   <div class="brand">D-WiTT<span>AUDiO iNSOMNiAC</span></div>
   <div class="navlinks">
-    <a href="#pillars">Work</a><a href="#projectmag">ProjectMAG</a><a href="#audio">Audio</a><a href="#design">Design</a>
-    <a href="#motion">Motion</a><a href="#ai">Ai</a><a href="#about">About</a><a href="#contact">Contact</a>
+    <a href="#pillars">Work</a><a href="#design">Design</a><a href="#projectmag">ProjectMAG</a><a href="#motion">Motion</a>
+    <a href="#ai">Ai</a><a href="#audio">Audio</a><a href="#about">About</a><a href="#contact">Contact</a>
   </div>
 </div></nav>
 
@@ -296,7 +330,7 @@ footer strong{color:var(--ink)}
   <div class="hero-top">
     <div>
       <p class="eyebrow">Tony DeWitt · Elk Grove, CA</p>
-      <h1>Sound, design,<br>motion &amp; Ai —<br>one studio.</h1>
+      <h1>Design, motion,<br>Ai &amp; sound —<br>one studio.</h1>
       <p class="tagline">Nineteen years making things that get seen and heard. <strong>Four disciplines, one pipeline</strong> — and a documented process behind every piece.</p>
     </div>
     <div class="hero-mark">
@@ -317,25 +351,6 @@ footer strong{color:var(--ink)}
   <div class="wrap"><div class="sec-head"><h2>The Four Pillars</h2><span class="rule"></span></div></div>
   <div class="pillars" id="pillarRow">
 
-    <article class="pillar" data-key="audio">
-      <div class="pillar__inner">
-        <div class="slide on" style="background-image:url(img/panel-audio-2.jpg)"></div>
-        <div class="slide" style="background-image:url(img/panel-audio-1.jpg)"></div>
-        <div class="slide" style="background-image:url(img/panel-audio-3.jpg)"></div>
-        <div class="veil"></div>
-      </div>
-      <div class="pillar__ui">
-        <div class="dots"><i class="on"></i><i></i><i></i></div>
-        <div class="body">
-          <span class="num">01</span><h3 style="color:var(--teal)">AUDiO</h3>
-          <span class="count">2 releases · 14 tracks · sound design</span>
-          <p class="blurb">Songs, score and sound design. Two commercially released projects engineered end to end, plus original world audio for ProjectMAG.</p>
-          <span class="go" style="color:var(--teal)">Listen →</span>
-        </div>
-        <div class="accent" style="background:var(--teal)"></div>
-      </div>
-    </article>
-
     <article class="pillar" data-key="design">
       <div class="pillar__inner">
         <div class="slide on" style="background-image:url(img/panel-design-1.jpg)"></div>
@@ -348,8 +363,8 @@ footer strong{color:var(--ink)}
       <div class="pillar__ui">
         <div class="dots"><i class="on"></i><i></i><i></i><i></i><i></i></div>
         <div class="body">
-          <span class="num">02</span><h3 style="color:var(--violet)">DESiGN</h3>
-          <span class="count">25 pieces · brand · print · 3D</span>
+          <span class="num">01</span><h3 style="color:var(--violet)">DESiGN</h3>
+          <span class="count">30 pieces · 16 clients · brand · print · 3D</span>
           <p class="blurb">Brand identity, event graphics, packaging and campaign work — for apparel brands, radio stations and venues.</p>
           <span class="go" style="color:var(--violet)">View work →</span>
         </div>
@@ -369,8 +384,8 @@ footer strong{color:var(--ink)}
       <div class="pillar__ui">
         <div class="dots"><i class="on"></i><i></i><i></i></div>
         <div class="body">
-          <span class="num">03</span><h3 style="color:var(--amber)">MOTiON</h3>
-          <span class="count">5 pieces · video plays on hover</span>
+          <span class="num">02</span><h3 style="color:var(--amber)">MOTiON</h3>
+          <span class="count">3 pieces · video plays on hover</span>
           <p class="blurb">Broadcast spots, music video, 3D motion graphics and live visuals running on venue screens.</p>
           <span class="go" style="color:var(--amber)">Watch →</span>
         </div>
@@ -388,7 +403,7 @@ footer strong{color:var(--ink)}
       <div class="pillar__ui">
         <div class="dots"><i class="on"></i><i></i><i></i></div>
         <div class="body">
-          <span class="num">04</span><h3 style="color:var(--pink)">Ai</h3>
+          <span class="num">03</span><h3 style="color:var(--pink)">Ai</h3>
           <span class="count">5 pieces + full process logs</span>
           <p class="blurb">AI-directed concept art. Sketch and 3D through ControlNet, every generation documented — settings, failures, decisions.</p>
           <span class="go" style="color:var(--pink)">View work →</span>
@@ -396,245 +411,34 @@ footer strong{color:var(--ink)}
         <div class="accent" style="background:var(--pink)"></div>
       </div>
     </article>
+    <article class="pillar" data-key="audio">
+      <div class="pillar__inner">
+        <div class="slide on" style="background-image:url(img/panel-audio-2.jpg)"></div>
+        <div class="slide" style="background-image:url(img/panel-audio-1.jpg)"></div>
+        <div class="slide" style="background-image:url(img/panel-audio-3.jpg)"></div>
+        <div class="veil"></div>
+      </div>
+      <div class="pillar__ui">
+        <div class="dots"><i class="on"></i><i></i><i></i></div>
+        <div class="body">
+          <span class="num">04</span><h3 style="color:var(--teal)">AUDiO</h3>
+          <span class="count">2 releases · 14 tracks · sound design · 1 video</span>
+          <p class="blurb">Songs, score and sound design. Two commercially released projects engineered end to end, plus original world audio for ProjectMAG.</p>
+          <span class="go" style="color:var(--teal)">Listen →</span>
+        </div>
+        <div class="accent" style="background:var(--teal)"></div>
+      </div>
+    </article>
+
   </div>
   <div class="wrap"><p style="color:var(--ink3);font-size:14px;padding-top:30px;margin:0">Hover a panel to expand it. Images cycle automatically; hovering pauses the cycle and plays video.</p></div>
 </section>
-
-<section class="feature" id="projectmag"><div class="wrap">
-  <div class="sec-head"><h2>The through-line</h2><span class="rule"></span></div>
-  <h3 class="feat-title">ProjectMAG</h3>
-  <p class="feat-kick">2010 → present · an original world, built across sixteen years</p>
-  <p class="feat-lede">A personal IP I began sketching in 2010 without knowing the pieces would connect. It's the reason I work across four disciplines — <strong>a world needs all of them.</strong></p>
-
-  <div class="magflow">
-    <figure>
-      <img src="img/concept-world-map.jpg" alt="Hand-painted ProjectMAG world map: coastline, ruined city, forest and mountains">
-      <figcaption><b>The world</b>The first cohesive city layout — painted in Adobe CC. Coastline, city, forest, mountains.</figcaption>
-    </figure>
-    <figure>
-      <video muted loop playsinline preload="metadata" poster="img/mag-vr-poster.jpg" controls>
-        <source src="video/mag-vr-highlight.mp4" type="video/mp4">
-      </video>
-      <figcaption><b>The layout, in VR</b>Blocked out in Gravity Sketch on a Quest 2 — coastline, north marker, mountain range, and the nightclub placed into the city.</figcaption>
-    </figure>
-    <figure>
-      <img src="img/mag/MAG-03.jpg" alt="ProjectMAG vehicle concept modelled in Maya, three-quarter view">
-      <figcaption><b>The vehicle</b>Modelled in Maya, 2013–14. Full interior, and a drivetrain nobody would build for a hero render.</figcaption>
-    </figure>
-    <figure>
-      <img src="img/venue-sketch.jpg" alt="2013 pencil sketch of The AA Meeting venue">
-      <figcaption><b>The venue, 2013</b>The AA Meeting — a location inside the world, drawn in a sketchbook.</figcaption>
-    </figure>
-    <figure>
-      <img src="img/venue-render.jpg" alt="AI render of The AA Meeting recovered from the 2013 sketch">
-      <figcaption><b>Recovered, 2026</b>The Unreal project was deleted clearing space for ComfyUI. The sketch went through ControlNet and came back buildable.</figcaption>
-    </figure>
-    <figure>
-      <img src="img/ue5-nightclub-viewport.jpg" alt="The AA Meeting rebuilt in Unreal Engine 5">
-      <figcaption><b>Built</b>Rebuilt in Unreal Engine 5 from that render. An interactive version is in development.</figcaption>
-    </figure>
-  </div>
-
-  <div class="magcars">
-    <img src="img/mag/MAG-05.jpg" alt="ProjectMAG vehicle, side profile">
-    <img src="img/mag/MAG-06.jpg" alt="ProjectMAG vehicle, underside showing differential and coilovers">
-    <img src="img/mag/MAG-11.jpg" alt="ProjectMAG vehicle interior with dashboard and seating">
-    <img src="img/mag/MAG-14.jpg" alt="ProjectMAG vehicle turbine wheel detail">
-  </div>
-
-  <div class="feat-note">
-    <p><strong>The AI work isn't a side project here — it's the recovery mechanism.</strong> A thirteen-year-old drawing was the only surviving reference for a deleted environment, and generative AI is what turned it back into something buildable.</p>
-    <p style="margin-top:10px">ProjectMAG is being developed toward a game, animated shorts, and assets appearing across my other work.</p>
-  </div>
-</div></section>
-
-<!-- ================= AUDiO ================= -->
-<section class="stub" id="audio"><div class="wrap">
-  <h3>AUDiO</h3>
-  <p class="kick" style="color:var(--teal)">Production · Recording · Mixing · Mastering · Sound Design</p>
-  <p class="count-line">2 released projects · 14 tracks · 1 sound-design set</p>
-  <p style="color:var(--ink2);max-width:64ch;margin:0 0 30px">Nineteen years of it. Three kinds of work: songs and production, instrumental and score, and sound design built for a world I'm making.</p>
-
-  <h4 class="subhead" style="margin-top:0">01 · Songs &amp; production</h4>
-
-  <article class="entry">
-    <div class="pair">
-      <figure><img src="img/turbo-sketch-notebook.jpg" alt="Notebook page with the freehand DakariBanz drawing, signed and dated 3.1.22"><figcaption>Concept sketch · notebook · 3.1.22</figcaption></figure>
-      <figure><img src="img/turbo-cover-1400.jpg" alt="Finished TURBO album cover"><figcaption>Released cover · 3465×3465</figcaption></figure>
-    </div>
-    <div class="entry-body">
-      <div>
-        <h4>TURBO — DakariBanz</h4>
-        <p class="entry-sub" style="color:var(--teal)">Created 2023 · Released 2024 · Los Angeles</p>
-        <p><strong>I recorded, mixed and mastered all seven tracks</strong>, and engineered <strong>30+ songs</strong> across the sessions that led to it. It started as a mixtape — working title <em>TURBO TAPE</em> — and became an album only after we cut everything that didn't hold up. Seven survived out of thirty.</p>
-        <p>I also drew the cover freehand in a notebook and digitised it with my phone.</p>
-      </div>
-      <dl class="creds">
-        <dt>Artist</dt><dd>DakariBanz</dd>
-        <dt>Role</dt><dd>Recording · mixing · mastering · cover art</dd>
-        <dt>Tracks</dt><dd>7 released · 30+ engineered</dd>
-        <dt>Listen</dt><dd><a href="https://open.spotify.com/album/54T9H6YpAlHDtwQ40xGSNP" target="_blank" rel="noopener">Spotify →</a></dd>
-      </dl>
-    </div>
-  </article>
-
-  <article class="entry">
-    <div class="entry-media ratio169">
-      <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/7wRftgSHcGo" title="SouLar — River Flo ft. D-WiTT" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen style="border:0;display:block"></iframe>
-    </div>
-    <div class="entry-body">
-      <div>
-        <h4>River Flo — SouLar ft. D-WiTT</h4>
-        <p class="entry-sub" style="color:var(--teal)">Released single · collaboration</p>
-        <p>Co-wrote, recorded, performed, co-mixed and mastered. Second artist on screen.</p>
-        <p><em>The video is not my work.</em> Shot, edited and directed by Chris at CriticalReels.</p>
-      </div>
-      <dl class="creds">
-        <dt>Role</dt><dd>Co-writer · vocals · recording · co-mix · master</dd>
-        <dt>Artist</dt><dd>SouLar</dd>
-        <dt>Video</dt><dd>Chris — CriticalReels</dd>
-      </dl>
-    </div>
-  </article>
-
-  <article class="entry">
-    <div class="entry-body" style="grid-template-columns:1.5fr .9fr">
-      <div>
-        <h4>CHARiSMA — Eme7 Beat Challenge</h4>
-        <p class="entry-sub" style="color:var(--teal)">2025 · sample received 3am, returned 6am</p>
-        <p>Every entrant gets the same Eme7 sample. The source is a control variable, so the flip is the whole brief.</p>
-        <p><strong>Left drumless on purpose</strong> — space kept for lyrics rather than layers. Focus was pocket, cadence control and punchlines.</p>
-        <p><em>Sent back to Wednesday Wreck as an open cypher invitation. It came back with a verse from SouLar on it.</em></p>
-      </div>
-      <dl class="creds">
-        <dt>Role</dt><dd>Wrote · performed · produced · engineered</dd>
-        <dt>Turnaround</dt><dd>3 hours</dd>
-        <dt>Built for</dt><dd>Open collaboration</dd>
-      </dl>
-    </div>
-    <div style="padding:0 26px 24px">
-      <div class="track" style="margin:0">
-        <div class="meta"><strong>CHARiSMA</strong><span>Drumless · open cut</span></div>
-        <div class="wave"><img src="img/wave-charisma-light.png" alt="Waveform"></div>
-        <audio controls preload="none" src="audio/dtai-charisma-snip.mp3"></audio>
-      </div>
-    </div>
-  </article>
-
-  <div class="track"><div class="meta"><strong>LA ViDA</strong><span>TURBO · released</span></div>
-    <div class="wave"><img src="img/wave-turbo-light.png" alt="Waveform"></div>
-    <audio controls preload="none" src="audio/turbo-la-vida-preview.mp3"></audio></div>
-  <div class="track"><div class="meta"><strong>ROOTS / Lessons</strong><span>prod. Causmic · 83 BPM · 2023</span></div>
-    <div class="wave"><img src="img/wave-roots-light.png" alt="Waveform"></div>
-    <audio controls preload="none" src="audio/dtai-roots-snip.mp3"></audio></div>
-  <div class="track"><div class="meta"><strong>NO DiAMONDS</strong><span>Unreleased · v55</span></div>
-    <div class="wave"><img src="img/wave-no-diamonds-light.png" alt="Waveform"></div>
-    <audio controls preload="none" src="audio/dtai-no-diamonds-snip.mp3"></audio></div>
-  <div class="track"><div class="meta"><strong>MiNE</strong><span>Unreleased · v32</span></div>
-    <div class="wave"><img src="img/wave-mine-light.png" alt="Waveform"></div>
-    <audio controls preload="none" src="audio/dtai-mine-snip.mp3"></audio></div>
-  <div class="track"><div class="meta"><strong>Abundance (EX)</strong><span>Unreleased</span></div>
-    <div class="wave"><img src="img/wave-abundance-ex-light.png" alt="Waveform"></div>
-    <audio controls preload="none" src="audio/dtai-abundance-ex-snip.mp3"></audio></div>
-  <div class="track"><div class="meta"><strong>Games (RD 2)</strong><span>Unreleased · round 2</span></div>
-    <div class="wave"><img src="img/wave-games-rd2-light.png" alt="Waveform"></div>
-    <audio controls preload="none" src="audio/dtai-games-rd2-snip.mp3"></audio></div>
-  <div class="track"><div class="meta"><strong>EXPOS</strong><span>Unreleased · v54</span></div>
-    <div class="wave"><img src="img/wave-expos-light.png" alt="Waveform"></div>
-    <audio controls preload="none" src="audio/dtai-expos-snip.mp3"></audio></div>
-  <div class="track"><div class="meta"><strong>Can Tell</strong><span>Unreleased · v37 · 144 BPM · 2023</span></div>
-    <div class="wave"><img src="img/wave-cantell-light.png" alt="Waveform"></div>
-    <audio controls preload="none" src="audio/dtai-can-tell-snip.mp3"></audio></div>
-  <div class="track"><div class="meta"><strong>Untitled</strong><span>Unreleased · v30 · 106 BPM · 2024</span></div>
-    <div class="wave"><img src="img/wave-untitled-light.png" alt="Waveform"></div>
-    <audio controls preload="none" src="audio/dtai-untitled-snip.mp3"></audio></div>
-  <div class="track"><div class="meta"><strong>SPiCE</strong><span>Unreleased · v13</span></div>
-    <div class="wave"><img src="img/wave-spice-light.png" alt="Waveform"></div>
-    <audio controls preload="none" src="audio/dtai-spice-snip.mp3"></audio></div>
-
-  <h4 class="subhead">02 · Score &amp; instrumental</h4>
-  <p style="color:var(--ink2);max-width:62ch;margin:-6px 0 18px;font-size:15px">Written with picture in mind — game, trailer and cinematic use.</p>
-  <div class="track"><div class="meta"><strong>LEAVES</strong><span>Instrumental · RD 4 · 120 BPM</span></div>
-    <div class="wave"><img src="img/wave-leaves-light.png" alt="Waveform"></div>
-    <audio controls preload="none" src="audio/dtai-leaves-snip.mp3"></audio></div>
-  <div class="track"><div class="meta"><strong>BiG BANG</strong><span>Lush instrumental · 84 BPM · 2019</span></div>
-    <div class="wave"><img src="img/wave-big-bang-light.png" alt="Waveform"></div>
-    <audio controls preload="none" src="audio/dtai-big-bang-snip.mp3"></audio></div>
-  <div class="track"><div class="meta"><strong>yammin</strong><span>Loop study · v35 · 110 BPM · 2022</span></div>
-    <div class="wave"><img src="img/wave-yammin-light.png" alt="Waveform"></div>
-    <audio controls preload="none" src="audio/dtai-yammin-snip.mp3"></audio></div>
-
-  <h4 class="subhead">03 · Sound design &amp; world audio</h4>
-  <article class="entry">
-    <div class="pair">
-      <figure><img src="img/fractured-render.jpg" alt="Fractured World render: helicopter firing an energy cannon into a city intersection"><figcaption>The image · Fractured World</figcaption></figure>
-      <figure><img src="img/wave-mag-sfx-cannon-light.png" alt="Waveform of the energy cannon charge and fire cycle" style="aspect-ratio:16/9;object-fit:contain;background:var(--bg2);padding:14px"><figcaption>The sound · full fire cycle</figcaption></figure>
-    </div>
-    <div class="entry-body">
-      <div>
-        <h4>Energy cannon — ProjectMAG</h4>
-        <p class="entry-sub" style="color:var(--teal)">Sound design · original · Pro Tools</p>
-        <p>The weapon in the render above. Full charge-up and fire cycle, built for the helicopter cannon in Fractured World.</p>
-        <p><em>The sound fades in after the blast wave.</em> At distance the light arrives before the air does — so the cycle is positioned rather than just played. That displacement is the whole design.</p>
-        <div style="margin-top:14px"><span class="tag">Original SFX</span><span class="tag">Pro Tools</span><span class="tag">Game audio</span></div>
-      </div>
-      <dl class="creds">
-        <dt>For</dt><dd>ProjectMAG</dd>
-        <dt>Role</dt><dd>Design · recording · mix</dd>
-        <dt>Length</dt><dd>0:31 · full cycle</dd>
-      </dl>
-    </div>
-    <div style="padding:0 26px 24px">
-      <div class="track" style="margin:0">
-        <div class="meta"><strong>Energy cannon</strong><span>Full charge &amp; fire</span></div>
-        <div class="wave"><img src="img/wave-mag-sfx-cannon-light.png" alt="Waveform"></div>
-        <audio controls preload="none" src="audio/mag-sfx-cannon.mp3"></audio>
-      </div>
-    </div>
-  </article>
-  <p style="color:var(--ink3);font-size:13.5px;margin-top:6px">Unreleased originals are posted as snippets only. Full versions available for licensing.</p>
-</div></section>
 
 <!-- ================= DESiGN ================= -->
 <section class="stub" id="design"><div class="wrap">
   <h3>DESiGN</h3>
   <p class="kick" style="color:var(--violet)">Brand · Print · Campaign · Event</p>
   <p class="count-line">30 pieces · 16 clients · Aden to Las Vegas · concept art through real-time 3D</p>
-
-  <div class="case">
-    <h4>Case study</h4>
-    <h3 style="margin-bottom:6px">LEiRU — one client, four disciplines</h3>
-    <p style="color:var(--ink2);max-width:66ch;margin:0">Resident DJ across several venues including The Garden, Las Vegas. What began as a logo became an ongoing relationship spanning identity, motion, live visuals and event marketing across 2021–22.</p>
-    <div class="steps">
-      <div><b>Identity</b><span>The LEiRU mark</span></div>
-      <div><b>Motion</b><span>3D animated lockup</span></div>
-      <div><b>Live visuals</b><span>Running on venue LED walls</span></div>
-      <div><b>Event marketing</b><span>Flyers across residencies</span></div>
-    </div>
-  </div>
-
-  <article class="entry">
-    <div class="pair" style="grid-template-columns:1fr 1fr 1fr">
-      <figure><img src="img/leiru-flyer-nye-2021.jpg" alt="LEiRU New Year's Eve flyer for The Garden Las Vegas"><figcaption>NYE · 31 Dec 2021</figcaption></figure>
-      <figure><img src="img/leiru-flyer-garden-friday.png" alt="The Garden Las Vegas Friday Nights flyer in teal"><figcaption>Friday · teal</figcaption></figure>
-      <figure><img src="img/leiru-flyer-garden-saturday.png" alt="The Garden Las Vegas Saturday Nights flyer in violet"><figcaption>Saturday · violet</figcaption></figure>
-    </div>
-    <div class="entry-body">
-      <div>
-        <h4>The Garden, Las Vegas — event flyers</h4>
-        <p class="entry-sub" style="color:var(--violet)">2021–2022 · Las Vegas</p>
-        <p>The NYE piece was built as a layered composite — 21 named layers, portrait cut out and set behind gold-outlined type, fireworks built up underneath.</p>
-        <p><em>The Friday and Saturday flyers are one template, not two designs.</em> Identical layout and hierarchy with a single variable swapped — teal for Friday, violet for Saturday — so the venue could run a recurring night without a designer touching it each week.</p>
-        <div style="margin-top:14px"><span class="tag">Photoshop</span><span class="tag">Template system</span><span class="tag">Event graphics</span></div>
-      </div>
-      <dl class="creds">
-        <dt>Client</dt><dd>LEiRU · The Garden Las Vegas</dd>
-        <dt>Role</dt><dd>Design, composite, retouch</dd>
-        <dt>Format</dt><dd>1080×1920 · social + print</dd>
-        <dt>Years</dt><dd>2021–2022</dd>
-      </dl>
-    </div>
-  </article>
 
   <article class="entry">
     <div class="pair evenrow" style="grid-template-columns:1fr 1fr 1fr">
@@ -685,7 +489,6 @@ footer strong{color:var(--ink)}
     <figure><img src="img/design-stjude-sharks-NEW.jpg" alt="St Jude shirt board with San Jose Sharks cap and game tickets, 92.7 KTOM logo"><figcaption><b>92.7 KTOM × St. Jude</b>Fundraising event photography · SJ Sharks</figcaption></figure>
   </div>
 
-
   <h4 class="subhead">3D, environment &amp; concept art</h4>
   <article class="entry">
     <div class="pair" style="grid-template-columns:1fr 1fr">
@@ -706,6 +509,91 @@ footer strong{color:var(--ink)}
         <dt>Role</dt><dd>Concept art · modelling · lighting</dd>
         <dt>Tools</dt><dd>Adobe CC · Blender · UE5</dd>
         <dt>Type</dt><dd>Self-directed</dd>
+      </dl>
+    </div>
+  </article>
+</div></section>
+
+<section class="feature" id="projectmag"><div class="wrap">
+  <div class="sec-head"><h2>The through-line</h2><span class="rule"></span></div>
+  <h3 class="feat-title">ProjectMAG</h3>
+  <p class="feat-kick">2010 → present · an original world, built across sixteen years</p>
+  <p class="feat-lede">A personal IP I began sketching in 2010 without knowing the pieces would connect. It's the reason I work across four disciplines — <strong>a world needs all of them.</strong></p>
+
+  <div class="magflow">
+    <figure>
+      <img src="img/concept-world-map.jpg" alt="Hand-painted ProjectMAG world map: coastline, ruined city, forest and mountains">
+      <figcaption><b>The world</b>The first cohesive city layout — painted in Adobe CC. Coastline, city, forest, mountains.</figcaption>
+    </figure>
+    <figure>
+      <video muted loop playsinline preload="metadata" poster="img/mag-vr-poster.jpg" controls>
+        <source src="video/mag-vr-highlight.mp4" type="video/mp4">
+      </video>
+      <figcaption><b>The layout, in VR</b>Blocked out in Gravity Sketch on a Quest 2 — coastline, north marker, mountain range, and the nightclub placed into the city.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/mag/MAG-03.jpg" alt="ProjectMAG vehicle concept modelled in Maya, three-quarter view">
+      <figcaption><b>The vehicle</b>Modelled in Maya, 2013–14. Full interior, and a drivetrain nobody would build for a hero render.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/venue-sketch.jpg" alt="2013 pencil sketch of The AA Meeting venue">
+      <figcaption><b>The venue, 2013</b>The AA Meeting — a location inside the world, drawn in a sketchbook.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/venue-render.jpg" alt="AI render of The AA Meeting recovered from the 2013 sketch">
+      <figcaption><b>Recovered, 2026</b>The Unreal project was deleted clearing space for ComfyUI. The sketch went through ControlNet and came back buildable.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/ue5-nightclub-viewport.jpg" alt="The AA Meeting rebuilt in Unreal Engine 5">
+      <figcaption><b>Built</b>Rebuilt in Unreal Engine 5 from that render. An interactive version is in development.</figcaption>
+    </figure>
+  </div>
+
+  <div class="magcars">
+    <img src="img/mag/MAG-05.jpg" alt="ProjectMAG vehicle, side profile">
+    <img src="img/mag/MAG-06.jpg" alt="ProjectMAG vehicle, underside showing differential and coilovers">
+    <img src="img/mag/MAG-11.jpg" alt="ProjectMAG vehicle interior with dashboard and seating">
+    <img src="img/mag/MAG-14.jpg" alt="ProjectMAG vehicle turbine wheel detail">
+  </div>
+
+  <div class="feat-note">
+    <p><strong>The AI work isn't a side project here — it's the recovery mechanism.</strong> A thirteen-year-old drawing was the only surviving reference for a deleted environment, and generative AI is what turned it back into something buildable.</p>
+    <p style="margin-top:10px">ProjectMAG is being developed toward a game, animated shorts, and assets appearing across my other work.</p>
+  </div>
+</div></section>
+
+<section class="stub cont"><div class="wrap">
+  <div class="case">
+    <h4>Case study</h4>
+    <h3 style="margin-bottom:6px">LEiRU — one client, four disciplines</h3>
+    <p style="color:var(--ink2);max-width:66ch;margin:0">Resident DJ across several venues including The Garden, Las Vegas. What began as a logo became an ongoing relationship spanning identity, motion, live visuals and event marketing across 2021–22.</p>
+    <div class="steps">
+      <div><b>Identity</b><span>The LEiRU mark</span></div>
+      <div><b>Motion</b><span>3D animated lockup</span></div>
+      <div><b>Live visuals</b><span>Running on venue LED walls</span></div>
+      <div><b>Event marketing</b><span>Flyers across residencies</span></div>
+    </div>
+  </div>
+
+  <article class="entry">
+    <div class="pair" style="grid-template-columns:1fr 1fr 1fr">
+      <figure><img src="img/leiru-flyer-nye-2021.jpg" alt="LEiRU New Year's Eve flyer for The Garden Las Vegas"><figcaption>NYE · 31 Dec 2021</figcaption></figure>
+      <figure><img src="img/leiru-flyer-garden-friday.png" alt="The Garden Las Vegas Friday Nights flyer in teal"><figcaption>Friday · teal</figcaption></figure>
+      <figure><img src="img/leiru-flyer-garden-saturday.png" alt="The Garden Las Vegas Saturday Nights flyer in violet"><figcaption>Saturday · violet</figcaption></figure>
+    </div>
+    <div class="entry-body">
+      <div>
+        <h4>The Garden, Las Vegas — event flyers</h4>
+        <p class="entry-sub" style="color:var(--violet)">2021–2022 · Las Vegas</p>
+        <p>The NYE piece was built as a layered composite — 21 named layers, portrait cut out and set behind gold-outlined type, fireworks built up underneath.</p>
+        <p><em>The Friday and Saturday flyers are one template, not two designs.</em> Identical layout and hierarchy with a single variable swapped — teal for Friday, violet for Saturday — so the venue could run a recurring night without a designer touching it each week.</p>
+        <div style="margin-top:14px"><span class="tag">Photoshop</span><span class="tag">Template system</span><span class="tag">Event graphics</span></div>
+      </div>
+      <dl class="creds">
+        <dt>Client</dt><dd>LEiRU · The Garden Las Vegas</dd>
+        <dt>Role</dt><dd>Design, composite, retouch</dd>
+        <dt>Format</dt><dd>1080×1920 · social + print</dd>
+        <dt>Years</dt><dd>2021–2022</dd>
       </dl>
     </div>
   </article>
@@ -733,7 +621,7 @@ footer strong{color:var(--ink)}
 <section class="stub" id="motion"><div class="wrap">
   <h3>MOTiON</h3>
   <p class="kick" style="color:var(--amber)">Video · Motion Graphics · 3D · Live Visuals</p>
-  <p class="count-line">5 pieces · 4 clients</p>
+  <p class="count-line">3 pieces · 2 clients</p>
 
   <article class="entry">
     <div class="entry-media ratio169">
@@ -793,6 +681,314 @@ footer strong{color:var(--ink)}
       </dl>
     </div>
   </article>
+</div></section>
+
+<!-- ================= Ai ================= -->
+<section class="stub" id="ai"><div class="wrap">
+  <h3>Ai</h3>
+  <p class="kick" style="color:var(--pink)">Direction · ControlNet · Documented Pipelines</p>
+  <p class="count-line">5 pieces · every one with a full process log</p>
+  <p style="color:var(--ink2);max-width:64ch;margin:0 0 24px">I direct generative AI as a production tool. Composition first — hand-drawn or authored in Blender — then structural control through ControlNet, then iterative prompt direction. Every piece ships with a log: the real settings, what broke, what I changed, what I killed.</p>
+  <div class="gal">
+    <figure><img src="img/venue-render.jpg" alt="The AA Meeting nightclub render"><figcaption><b>The AA Meeting</b>2013 sketch → AI render → UE5 rebuild</figcaption></figure>
+    <figure><img src="img/fractured-render.jpg" alt="Fractured World render"><figcaption><b>Fractured World</b>Hand-painted concept → render · 10 generations</figcaption></figure>
+    <figure><img src="img/blender-render.jpg" alt="The Lab, Blender to AI render"><figcaption><b>The Lab</b>Blender blockout → render · incl. the VRAM crash</figcaption></figure>
+    <figure><img src="img/lab-render.jpg" alt="The Lab sketch to render"><figcaption><b>The Lab</b>Line drawing → render · held at default threshold</figcaption></figure>
+    <figure><img src="img/lab-concept.jpg" alt="The Lab, text prompt only"><figcaption><b>The Lab — text only</b>The control case: prompt without structure</figcaption></figure>
+  </div>
+  <h4 class="subhead" id="logs">Process logs</h4>
+  <p style="color:var(--ink2);max-width:64ch;margin:-4px 0 18px;font-size:15px">Real settings, the failures included. Open any one.</p>
+  <div class="logs">
+      <details class="log">
+      <summary><b>The AA Meeting</b><span>2 generations</span></summary>
+      <div class="log-body">
+        <dl class="log-spec">
+          <dt>Control</dt><dd>ControlNet Union (model patch) · Canny</dd>
+          <dt>Base model</dt><dd>Z-Image-Turbo</dd>
+          <dt>Source</dt><dd>2013 sketchbook concept — phone-digitized, lines cleaned and darkened</dd>
+          <dt>Canny</dt><dd>0.10 / 0.15 &nbsp;→&nbsp; 0.10 / 0.18</dd>
+        </dl>
+
+        <h5>Observations</h5>
+        <ul>
+          <li>Render 1 held the architecture faithfully — venue shape, columns, crowd silhouettes, and the gated foreground all survived the edge map.</li>
+          <li>The signage came back as abstract neon swirls. The edge map carried the <em>shape</em> of the logo, but the prompt never said what the logo <em>was</em> — so the model had nothing to resolve it into.</li>
+        </ul>
+
+        <h5>Adjustments</h5>
+        <ul>
+          <li>Defined the invented element explicitly: <em>"a sixteenth music note with a cursive font displaying THE AA MEETING."</em> The next pass rendered readable text and the note form.</li>
+          <li>Added <em>"narrow beams from stage lights and lasers shine upward"</em> — produced the volumetric shafts that sell the rave atmosphere. Lighting responds to direction as reliably as composition does.</li>
+          <li>Raised the Canny high threshold 0.15 → 0.18. A small bump: tightened linework and cleaned crowd placement without loosening the structure.</li>
+        </ul>
+
+        <h5>Kept / Killed</h5>
+        <ul>
+          <li><strong>Kept Render 2.</strong> Sharper building edges, cleaner crowd shape and placement, improved lighting, more on-brand.</li>
+          <li>Accepted a minor artifact on the far-right crowd — it reads as shadow cast from the stage lights, so it costs the frame nothing.</li>
+          <li>Noted for production: the render placed a light-purple silhouetted box on the far-left column. Good speaker placement — duplicating it to the right column in the UE5 build.</li>
+        </ul>
+      </div>
+    </details>
+      <details class="log">
+      <summary><b>Fractured World</b><span>10 generations</span></summary>
+      <div class="log-body">
+        <dl class="log-spec">
+          <dt>Control</dt><dd>ControlNet Union (model patch) · Canny</dd>
+          <dt>Base model</dt><dd>Z-Image-Turbo</dd>
+          <dt>Source</dt><dd>Hand-painted mixed-media concept sketch</dd>
+          <dt>Canny sweep</dt><dd>0.10 / 0.15 · 0.18 · 0.21 · 0.25 · 0.28 · 0.35</dd>
+        </dl>
+
+        <h5>Observations</h5>
+        <ul>
+          <li>First pass at 0.10 / 0.25 lost too much. The rock formations came through, but the energy beam and the explosion structure dissolved entirely.</li>
+          <li>Tightening to 0.10 / 0.15 locked the intersection and held the helicopter's open side doors with clean lines — but the beam still had no structure, and an artifact floated above the truck.</li>
+          <li><em>The pattern that emerged:</em> on painterly source art, hard-edged objects (vehicle bodies, street geometry) survive edge detection. Soft-edged ones — energy, blast, smoke — have no edges to detect. The beam kept dying no matter how tight I pulled the threshold, because the problem was never the threshold.</li>
+        </ul>
+
+        <h5>Adjustments</h5>
+        <ul>
+          <li>Stopped fighting it with thresholds and rewrote the prompt instead — named the beam's source (<em>"a cannon mounted on the helicopter side door"</em>), named the vehicle (<em>"a white box truck"</em>), gave the debris a physical origin. Structure the edge map can't supply has to come from language.</li>
+          <li>Pulled the armored character out. Its placement was wrong, and it can be composited back in later — removing it stopped the model spending detail on a subject I wasn't going to keep.</li>
+          <li>Swept the high threshold across the full range with the prompt held constant, to find where <em>this</em> source wanted to sit rather than assuming a default.</li>
+          <li>Reframed the helicopter as the subject rather than one element among many, then added <em>"large buildings / massive futuristic towers"</em> to fix the scale relationship against the truck.</li>
+        </ul>
+
+        <h5>Kept / Killed</h5>
+        <ul>
+          <li><strong>Killed 0.18 and 0.21 outright.</strong> The scene objective collapsed — color and lighting held, but the composition stopped meaning anything.</li>
+          <li><strong>Kept the loose end of the sweep.</strong> The cityscape finally built itself and the beam structured properly against the molten ground.</li>
+          <li><em>The counter-intuitive finding, and the one I actually kept:</em> on loose painterly art, <strong>less</strong> structural control produced the better image. Clean architectural line art wants a tight threshold; painterly source wants an open one — because forcing the model to trace ambiguous strokes was what broke the scene in the first place.</li>
+          <li>The remaining corner artifact is a Photoshop or inpaint fix, not a reason to re-roll a frame that works.</li>
+        </ul>
+      </div>
+    </details>
+      <details class="log">
+      <summary><b>The Lab — Blender blockout</b><span>7 generations on the 3D reference</span></summary>
+      <div class="log-body">
+        <dl class="log-spec">
+          <dt>Control</dt><dd>ControlNet Union (model patch) · Canny</dd>
+          <dt>Source</dt><dd>Blender viewport frame — scene modelled, staged and lit by me</dd>
+          <dt>Canny</dt><dd>0.10 / 0.34 default · swept 0.22 · 0.20 · 0.15</dd>
+          <dt>Resolution</dt><dd>1024 → 768 (forced by VRAM)</dd>
+        </dl>
+
+        <h5>Observations</h5>
+        <ul>
+          <li>Swapping the reference from a prior render to the Blender frame changed the architecture immediately — the observation window grew to full height, and the front lab counter rendered on the <em>wrong side of the glass</em>, inside the studio.</li>
+          <li><strong>Materials were the win.</strong> Studio wall treatment, acoustic panels, and the amber accent lighting behind the panels all resolved convincingly. Glass quality improved with real reflections.</li>
+          <li><strong>Structure was the cost.</strong> Repeated artifacts at the counter line, a floating bonsai, a chair rendered in two layers, a microphone that resolved into a chandelier, gibberish text on the console screens.</li>
+          <li>Re-angling the Blender camera made it worse, not better: the laboratory held its structure, the observation room didn't.</li>
+        </ul>
+
+        <h5>Adjustments</h5>
+        <ul>
+          <li>Swept the high threshold down from the 0.34 default through 0.22, 0.20, and 0.15 looking for cleaner detection. Tightening never rescued it — at 0.15 the image softened, clean lines were lost, and noise increased.</li>
+          <li>Hit the 8 GB VRAM ceiling on the seventh generation — KSampler failed mid-execution. Restarted ComfyUI, closed Blender and everything else, dropped resolution 1024 → 768. The render completed.</li>
+          <li>Logged the cost of that fix rather than hiding it: 768 is visibly softer than 1024, and most of the added digital noise sat in the dark areas of the frame.</li>
+        </ul>
+
+        <h5>Kept / Killed</h5>
+        <ul>
+          <li>Kept the frame where the studio materials and the two-zone lighting held together.</li>
+          <li><strong>The working theory I took out of it:</strong> my Blender scene lighting is too bright for clean edge detection. Blown highlights give Canny nothing to trace — which is why structure kept dissolving no matter which threshold I tried.</li>
+          <li><em>That's the difference that matters. The next pass is a lighting change in the 3D scene I authored, not a parameter change in ComfyUI.</em></li>
+        </ul>
+      </div>
+    </details>
+      <details class="log">
+      <summary><b>The Lab — line drawing</b><span>3 generations</span></summary>
+      <div class="log-body">
+        <dl class="log-spec">
+          <dt>Control</dt><dd>ControlNet Union (model patch) · Canny</dd>
+          <dt>Source</dt><dd>Hand-drawn line layout</dd>
+          <dt>Canny</dt><dd>0.10 / 0.34 — default, no adjustment needed</dd>
+          <dt>Resolution</dt><dd>768</dd>
+        </dl>
+
+        <h5>Observations</h5>
+        <ul>
+          <li>Held at the <em>default</em> threshold on the first pass — no tuning required. After fighting the 3D reference, that was the whole point: clean line art carries no shading noise and no blown highlights, so the edge map contains my composition and nothing else.</li>
+          <li>Everything decorative came from language rather than the drawing — the emergency button and its glass lift cover, the beaker, the test tubes and microscope, the cyan strip lighting, the amber accent behind the acoustic panels.</li>
+        </ul>
+
+        <h5>Adjustments</h5>
+        <ul>
+          <li>Asked for <em>"two pairs of studio monitors"</em> on the second pass and got <strong>eight speakers</strong>. The model already reads one pair as four — two per side. A quantifier that's obvious to me was ambiguous to it.</li>
+          <li>That same pass lost the mixing console and the room depth, and dropped an artifact in front of the raised platform. One imprecise phrase cost the entire frame.</li>
+          <li>Reverted to the original prompt and re-ran at default to re-test line detection before touching the threshold — isolating one variable instead of changing two things at once.</li>
+        </ul>
+
+        <h5>Kept / Killed</h5>
+        <ul>
+          <li><strong>Kept the first pass.</strong> The cleanest structural adherence of anything on this page, and it needed the least intervention.</li>
+          <li>The rule I took from it: <em>count in explicit numbers, never in groupings.</em> "Four studio monitors, two per side" leaves nothing to interpret.</li>
+        </ul>
+      </div>
+    </details>
+      <details class="log">
+      <summary><b>The Lab — text only</b><span>the control case</span></summary>
+      <div class="log-body">
+        <dl class="log-spec">
+          <dt>Control</dt><dd>None — prompt only</dd>
+          <dt>Model stack</dt><dd>Z-Image-Turbo · Qwen-3-4B text encoder · ae VAE</dd>
+          <dt>Settings</dt><dd>15 steps · 1344 × 768</dd>
+          <dt>Method</dt><dd>Seed held fixed, prompt varied</dd>
+        </dl>
+
+        <h5>Observations</h5>
+        <ul>
+          <li>On-brand in a single generation — palette, mood, and lighting landed immediately from brand tokens alone. The model added a glowing waveform behind the glass <em>unprompted</em>, an emergent match to the audio-visual identity.</li>
+          <li>Second pass: seed held fixed, prompt expanded to put a recording studio behind the glass. The two-zone color-temperature concept landed — warm studio through the window, cool observation room in front.</li>
+          <li>But the foreground drifted from "lab" toward "studio," and placement didn't match intent: mic at the console instead of in the booth, no lab counters at all.</li>
+        </ul>
+
+        <h5>Finding</h5>
+        <ul>
+          <li><strong>A fixed seed does not freeze the image when the prompt changes.</strong> The seed sets the initial noise; the prompt shapes how that noise resolves. Same seed + changed prompt = related, not identical. The seed is a controlled-experiment variable, not a freeze button.</li>
+          <li>The same limit surfaced three ways across sessions: subject identity wouldn't hold across camera angles, objects wouldn't hold position, and output wouldn't hold stable across prompt edits.</li>
+        </ul>
+
+        <h5>Kept / Killed</h5>
+        <ul>
+          <li><strong>Kept as the control case.</strong> Prompt and seed give <em>influence, not control</em> — they paint mood and content in broad strokes and cannot do surgical, spatial, or identity-locked edits.</li>
+          <li>Written in the log at the time: <em>"I now know where prompt-and-seed control ends and where conditioning tools become necessary, because I have now mapped this boundary myself."</em></li>
+          <li>Not from a tutorial — by hitting it. It's the reason every other piece on this page starts with a drawing or a 3D scene instead of a sentence.</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</div></section>
+
+<!-- ================= AUDiO ================= -->
+<section class="stub" id="audio"><div class="wrap">
+  <h3>AUDiO</h3>
+  <p class="kick" style="color:var(--teal)">Production · Recording · Mixing · Mastering · Sound Design</p>
+  <p class="count-line">2 released projects · 14 tracks · 1 sound-design set · 1 music video</p>
+  <p style="color:var(--ink2);max-width:64ch;margin:0 0 30px">Nineteen years of it. Three kinds of work: songs and production, instrumental and score, and sound design built for a world I'm making.</p>
+
+  <h4 class="subhead">01 · Sound design &amp; world audio</h4>
+  <article class="entry">
+    <div class="pair">
+      <figure><img src="img/fractured-render.jpg" alt="Fractured World render: helicopter firing an energy cannon into a city intersection"><figcaption>The image · Fractured World</figcaption></figure>
+      <figure><img src="img/wave-mag-sfx-cannon-light.png" alt="Waveform of the energy cannon charge and fire cycle" style="aspect-ratio:16/9;object-fit:contain;background:var(--bg2);padding:14px"><figcaption>The sound · full fire cycle</figcaption></figure>
+    </div>
+    <div class="entry-body">
+      <div>
+        <h4>Energy cannon — ProjectMAG</h4>
+        <p class="entry-sub" style="color:var(--teal)">Sound design · original · Pro Tools</p>
+        <p>The weapon in the render above. Full charge-up and fire cycle, built for the helicopter cannon in Fractured World.</p>
+        <p><em>The sound fades in after the blast wave.</em> At distance the light arrives before the air does — so the cycle is positioned rather than just played. That displacement is the whole design.</p>
+        <div style="margin-top:14px"><span class="tag">Original SFX</span><span class="tag">Pro Tools</span><span class="tag">Game audio</span></div>
+      </div>
+      <dl class="creds">
+        <dt>For</dt><dd>ProjectMAG</dd>
+        <dt>Role</dt><dd>Design · recording · mix</dd>
+        <dt>Length</dt><dd>0:31 · full cycle</dd>
+      </dl>
+    </div>
+    <div style="padding:0 26px 24px">
+      <div class="track" style="margin:0">
+        <div class="meta"><strong>Energy cannon</strong><span>Full charge &amp; fire</span></div>
+        <div class="wave"><img src="img/wave-mag-sfx-cannon-light.png" alt="Waveform"></div>
+        <audio controls preload="none" src="audio/mag-sfx-cannon.mp3"></audio>
+      </div>
+    </div>
+  </article>
+
+  <h4 class="subhead">02 · Songs &amp; production</h4>
+  <article class="entry">
+    <div class="entry-body" style="grid-template-columns:1.5fr .9fr">
+      <div>
+        <h4>CHARiSMA — Eme7 Beat Challenge</h4>
+        <p class="entry-sub" style="color:var(--teal)">2025 · sample received 3am, returned 6am</p>
+        <p>Every entrant gets the same Eme7 sample. The source is a control variable, so the flip is the whole brief.</p>
+        <p><strong>Left drumless on purpose</strong> — space kept for lyrics rather than layers. Focus was pocket, cadence control and punchlines.</p>
+        <p><em>Sent back to Wednesday Wreck as an open cypher invitation. It came back with a verse from SouLar on it.</em></p>
+      </div>
+      <dl class="creds">
+        <dt>Role</dt><dd>Wrote · performed · produced · engineered</dd>
+        <dt>Turnaround</dt><dd>3 hours</dd>
+        <dt>Built for</dt><dd>Open collaboration</dd>
+      </dl>
+    </div>
+    <div style="padding:0 26px 24px">
+      <div class="track" style="margin:0">
+        <div class="meta"><strong>CHARiSMA</strong><span>Drumless · open cut</span></div>
+        <div class="wave"><img src="img/wave-charisma-light.png" alt="Waveform"></div>
+        <audio controls preload="none" src="audio/dtai-charisma-snip.mp3"></audio>
+      </div>
+    </div>
+  </article>
+
+  <h4 class="subhead">03 · Score &amp; instrumental</h4>
+  <p style="color:var(--ink2);max-width:62ch;margin:-6px 0 18px;font-size:15px">Written with picture in mind — game, trailer and cinematic use.</p>
+  <div class="track"><div class="meta"><strong>LEAVES</strong><span>Instrumental · RD 4 · 120 BPM</span></div>
+    <div class="wave"><img src="img/wave-leaves-light.png" alt="Waveform"></div>
+    <audio controls preload="none" src="audio/dtai-leaves-snip.mp3"></audio></div>
+  <div class="track"><div class="meta"><strong>BiG BANG</strong><span>Lush instrumental · 84 BPM · 2019</span></div>
+    <div class="wave"><img src="img/wave-big-bang-light.png" alt="Waveform"></div>
+    <audio controls preload="none" src="audio/dtai-big-bang-snip.mp3"></audio></div>
+  <div class="track"><div class="meta"><strong>yammin</strong><span>Loop study · v35 · 110 BPM · 2022</span></div>
+    <div class="wave"><img src="img/wave-yammin-light.png" alt="Waveform"></div>
+    <audio controls preload="none" src="audio/dtai-yammin-snip.mp3"></audio></div>
+
+  <h4 class="subhead">04 · Records &amp; credits</h4>
+  <article class="entry">
+    <div class="entry-media ratio169">
+      <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/7wRftgSHcGo" title="SouLar — River Flo ft. D-WiTT" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen style="border:0;display:block"></iframe>
+    </div>
+    <div class="entry-body">
+      <div>
+        <h4>River Flo — SouLar ft. D-WiTT</h4>
+        <p class="entry-sub" style="color:var(--teal)">Released single · collaboration</p>
+        <p>Co-wrote, recorded, performed, co-mixed and mastered. Second artist on screen.</p>
+        <p><em>The video is not my work.</em> Shot, edited and directed by Chris at CriticalReels.</p>
+      </div>
+      <dl class="creds">
+        <dt>Role</dt><dd>Co-writer · vocals · recording · co-mix · master</dd>
+        <dt>Artist</dt><dd>SouLar</dd>
+        <dt>Video</dt><dd>Chris — CriticalReels</dd>
+      </dl>
+    </div>
+  </article>
+
+  <article class="entry">
+    <div class="pair">
+      <figure><img src="img/turbo-sketch-notebook.jpg" alt="Notebook page with the freehand DakariBanz drawing, signed and dated 3.1.22"><figcaption>Concept sketch · notebook · 3.1.22</figcaption></figure>
+      <figure><img src="img/turbo-cover-1400.jpg" alt="Finished TURBO album cover"><figcaption>Released cover · 3465×3465</figcaption></figure>
+    </div>
+    <div class="entry-body">
+      <div>
+        <h4>TURBO — DakariBanz</h4>
+        <p class="entry-sub" style="color:var(--teal)">Created 2023 · Released 2024 · Los Angeles</p>
+        <p><strong>I recorded, mixed and mastered all seven tracks</strong>, and engineered <strong>30+ songs</strong> across the sessions that led to it. It started as a mixtape — working title <em>TURBO TAPE</em> — and became an album only after we cut everything that didn't hold up. Seven survived out of thirty.</p>
+        <p>I also drew the cover freehand in a notebook and digitised it with my phone.</p>
+      </div>
+      <dl class="creds">
+        <dt>Artist</dt><dd>DakariBanz</dd>
+        <dt>Role</dt><dd>Recording · mixing · mastering · cover art</dd>
+        <dt>Tracks</dt><dd>7 released · 30+ engineered</dd>
+        <dt>Listen</dt><dd><a href="https://open.spotify.com/album/54T9H6YpAlHDtwQ40xGSNP" target="_blank" rel="noopener">Spotify →</a></dd>
+      </dl>
+    </div>
+    <div style="padding:0 26px 24px">
+      <div class="track" style="margin:0">
+        <div class="meta"><strong>LA ViDA</strong><span>TURBO · released</span></div>
+        <div class="wave"><img src="img/wave-turbo-light.png" alt="Waveform"></div>
+        <audio controls preload="none" src="audio/turbo-la-vida-preview.mp3"></audio>
+      </div>
+    </div>
+  </article>
+
+  <h4 class="subhead">05 · More from the catalogue</h4>
+  <div class="track"><div class="meta"><strong>Games (RD 2)</strong><span>Unreleased · round 2</span></div>
+    <div class="wave"><img src="img/wave-games-rd2-light.png" alt="Waveform"></div>
+    <audio controls preload="none" src="audio/dtai-games-rd2-snip.mp3"></audio></div>
+  <div class="track"><div class="meta"><strong>Can Tell</strong><span>Unreleased · v37 · 144 BPM · 2023</span></div>
+    <div class="wave"><img src="img/wave-cantell-light.png" alt="Waveform"></div>
+    <audio controls preload="none" src="audio/dtai-can-tell-snip.mp3"></audio></div>
 
   <article class="entry">
     <div class="entry-media vert" style="max-height:600px">
@@ -815,23 +1011,31 @@ footer strong{color:var(--ink)}
       </dl>
     </div>
   </article>
+
+  <div class="track"><div class="meta"><strong>ROOTS / Lessons</strong><span>prod. Causmic · 83 BPM · 2023</span></div>
+    <div class="wave"><img src="img/wave-roots-light.png" alt="Waveform"></div>
+    <audio controls preload="none" src="audio/dtai-roots-snip.mp3"></audio></div>
+  <div class="track"><div class="meta"><strong>NO DiAMONDS</strong><span>Unreleased · v55</span></div>
+    <div class="wave"><img src="img/wave-no-diamonds-light.png" alt="Waveform"></div>
+    <audio controls preload="none" src="audio/dtai-no-diamonds-snip.mp3"></audio></div>
+  <div class="track"><div class="meta"><strong>MiNE</strong><span>Unreleased · v32</span></div>
+    <div class="wave"><img src="img/wave-mine-light.png" alt="Waveform"></div>
+    <audio controls preload="none" src="audio/dtai-mine-snip.mp3"></audio></div>
+  <div class="track"><div class="meta"><strong>Abundance (EX)</strong><span>Unreleased</span></div>
+    <div class="wave"><img src="img/wave-abundance-ex-light.png" alt="Waveform"></div>
+    <audio controls preload="none" src="audio/dtai-abundance-ex-snip.mp3"></audio></div>
+  <div class="track"><div class="meta"><strong>EXPOS</strong><span>Unreleased · v54</span></div>
+    <div class="wave"><img src="img/wave-expos-light.png" alt="Waveform"></div>
+    <audio controls preload="none" src="audio/dtai-expos-snip.mp3"></audio></div>
+  <div class="track"><div class="meta"><strong>Untitled</strong><span>Unreleased · v30 · 106 BPM · 2024</span></div>
+    <div class="wave"><img src="img/wave-untitled-light.png" alt="Waveform"></div>
+    <audio controls preload="none" src="audio/dtai-untitled-snip.mp3"></audio></div>
+  <div class="track"><div class="meta"><strong>SPiCE</strong><span>Unreleased · v13</span></div>
+    <div class="wave"><img src="img/wave-spice-light.png" alt="Waveform"></div>
+    <audio controls preload="none" src="audio/dtai-spice-snip.mp3"></audio></div>
+  <p style="color:var(--ink3);font-size:13.5px;margin-top:6px">Unreleased originals are posted as snippets only. Full versions available for licensing.</p>
 </div></section>
 
-<!-- ================= Ai ================= -->
-<section class="stub" id="ai"><div class="wrap">
-  <h3>Ai</h3>
-  <p class="kick" style="color:var(--pink)">Direction · ControlNet · Documented Pipelines</p>
-  <p class="count-line">5 pieces · every one with a full process log</p>
-  <p style="color:var(--ink2);max-width:64ch;margin:0 0 24px">I direct generative AI as a production tool. Composition first — hand-drawn or authored in Blender — then structural control through ControlNet, then iterative prompt direction. Every piece ships with a log: the real settings, what broke, what I changed, what I killed.</p>
-  <div class="gal">
-    <figure><img src="img/venue-render.jpg" alt="The AA Meeting nightclub render"><figcaption><b>The AA Meeting</b>2013 sketch → AI render → UE5 rebuild</figcaption></figure>
-    <figure><img src="img/fractured-render.jpg" alt="Fractured World render"><figcaption><b>Fractured World</b>Hand-painted concept → render · 10 generations</figcaption></figure>
-    <figure><img src="img/blender-render.jpg" alt="The Lab, Blender to AI render"><figcaption><b>The Lab</b>Blender blockout → render · incl. the VRAM crash</figcaption></figure>
-    <figure><img src="img/lab-render.jpg" alt="The Lab sketch to render"><figcaption><b>The Lab</b>Line drawing → render · held at default threshold</figcaption></figure>
-    <figure><img src="img/lab-concept.jpg" alt="The Lab, text prompt only"><figcaption><b>The Lab — text only</b>The control case: prompt without structure</figcaption></figure>
-  </div>
-  <p style="margin-top:22px"><a href="https://tony-dewitt.github.io" target="_blank" rel="noopener">Read the full process logs →</a></p>
-</div></section>
 
 
 <section class="stub" id="about"><div class="wrap">
